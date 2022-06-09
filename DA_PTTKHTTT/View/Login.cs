@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DA_PTTKHTTT.View;
 
 namespace DA_PTTKHTTT.View
 {
@@ -40,6 +41,30 @@ namespace DA_PTTKHTTT.View
             if (username.ToUpper().Contains("NVDH"))
             {
                 PhanCongBacSi form = new PhanCongBacSi();
+                this.Hide();
+                form.ShowDialog();
+            }
+            else if (username.ToUpper().Contains("BS"))
+            {
+                BacSy.BacSy_Home form = new BacSy.BacSy_Home();
+                this.Hide();
+                form.ShowDialog();
+            }
+            else if (username.ToUpper().Contains("QL"))
+            {
+                QuanLy.QuanLy_Home form = new QuanLy.QuanLy_Home();
+                this.Hide();
+                form.ShowDialog();
+            }
+            else if (username.ToUpper().Contains("KH"))
+            {
+                KhachHang.KhachHang_Home form = new KhachHang.KhachHang_Home();
+                this.Hide();
+                form.ShowDialog();
+            }
+            else if (username.ToUpper().Contains("NV"))
+            {
+                NhanVien.NhanVien_Home form = new NhanVien.NhanVien_Home();
                 this.Hide();
                 form.ShowDialog();
             }
