@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DA_PTTKHTTT
+namespace DA_PTTKHTTT.View
 {
-    public partial class Form1 : Form
+    public partial class DangKyLichLamViec : Form
     {
-        public Form1()
+        public DangKyLichLamViec()
         {
             InitializeComponent();
         }
