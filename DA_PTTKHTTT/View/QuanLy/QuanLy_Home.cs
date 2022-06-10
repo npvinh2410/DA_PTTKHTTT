@@ -16,5 +16,11 @@ namespace DA_PTTKHTTT.View.QuanLy
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            QuanLy.DuyetDSDatMua form = new QuanLy.DuyetDSDatMua();
+            form.ShowDialog();
+        }
     }
 }
