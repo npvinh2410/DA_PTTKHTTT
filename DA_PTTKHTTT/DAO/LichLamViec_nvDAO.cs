@@ -96,6 +96,38 @@ namespace DA_PTTKHTTT.DAO
                 conn.Close();
             }
         }
+
+        public static int docThongTin(Lichlamviec_nvDTO lichlamviec)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query = "select MALICH, MANV, NGAY, CA"
+                                + "\nfrom DBA_PTTK.lichlamviec_nv"
+                                + "\nwhere malich = '"+ lichlamviec.MaLich + "' and manv = '"+ lichlamviec.MaNV +"'"
+                                 + "\nand ngay = to_date('"+ lichlamviec.Ngay.ToString("dd/MM/yyy") + "', 'dd/mm/yyyy') and ca = '"+lichlamviec.Ca+"'";
+
+                OracleCommand command = new OracleCommand(query, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(dataTable);
+
+
+                int soluong = dataTable.Rows.Count;
+
+                return soluong;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 
 

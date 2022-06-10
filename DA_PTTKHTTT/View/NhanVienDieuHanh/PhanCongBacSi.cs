@@ -69,9 +69,9 @@ namespace DA_PTTKHTTT
             String maNVDH = LoginInfo.USERNAME;
 
             Lichlamviec_nvDTO lichlamviec = Lichlamviec_nvService.khoiTao(maLich, maNV, ngay, Ca, maNVDH);
-            if (Lichlamviec_nvService.kiemTraSoLuongNhanVienDacThu(maLich, ngay, Ca, tenLoaiNV))
+            if (Lichlamviec_nvService.kiemTraSoLuongNhanVienDacThu(maLich, ngay, Ca, tenLoaiNV) && !Lichlamviec_nvService.kiemTraTonTai(lichlamviec))
             {
-                if (Lichlamviec_nvService.themLichLamViec(lichlamviec))
+                if (Lichlamviec_nvService.themLichLamViec(lichlamviec) )
                 {
                     MessageBox.Show("Thêm thành công");
                     GridLichLamViec.DataSource = Lichlamviec_nvService.docLichLamViecNV(maLich, maNV);

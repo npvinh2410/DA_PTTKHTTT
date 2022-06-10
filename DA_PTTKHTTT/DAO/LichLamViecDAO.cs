@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using DA_PTTKHTTT.DTO;
 using Oracle.ManagedDataAccess.Client;
+using System.Text.RegularExpressions;
 
 namespace DA_PTTKHTTT.DAO
 {
@@ -40,6 +41,43 @@ namespace DA_PTTKHTTT.DAO
             catch (Exception ex)
             {
                 return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static bool themLichLamViec(LichLamViecDTO lichLamViec)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query0 = "select MALICH from DBA_PTTK.lichlamviec order by MALICH desc";
+                OracleCommand command0 = new OracleCommand(query0, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command0);
+                adapter.Fill(dataTable);
+                String maLichCu = dataTable.Rows[0]["MALICH"].ToString();
+                String sttLichCu = new String(maLichCu.Where(Char.IsDigit).ToArray());
+                int stt = Int32.Parse(sttLichCu) +1;
+                lichLamViec.MaLich = "L" + stt.ToString();
+
+                string query = "insert into DBA_PTTK.lichlamviec "
+                                + "\nvalues('"+lichLamViec.MaLich+ "', to_date('"+ lichLamViec.NgayApDung.ToString("dd/MM/yyyy")+ "', 'dd/mm/yyyy'), to_date('"+lichLamViec.NgayKetThuc.ToString("dd/MM/yyyy") + "', 'dd/mm/yyyy'), "+lichLamViec.TrangThai+")";
+
+                OracleCommand command = conn.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
             finally
             {

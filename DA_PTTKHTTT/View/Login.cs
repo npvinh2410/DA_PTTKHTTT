@@ -40,7 +40,7 @@ namespace DA_PTTKHTTT.View
         {
             if (username.ToUpper().Contains("NVDH"))
             {
-                PhanCongBacSi form = new PhanCongBacSi();
+                NhanVienDieuHanh.NhanVienDieuHanh_Home form = new NhanVienDieuHanh.NhanVienDieuHanh_Home();
                 this.Hide();
                 form.ShowDialog();
             }

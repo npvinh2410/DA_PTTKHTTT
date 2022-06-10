@@ -54,5 +54,12 @@ namespace DA_PTTKHTTT.Service
             return LichLamViec_nvDAO.docLichLamViecNhanVien(maLich, maNV);
         }
 
+        public static bool kiemTraTonTai(Lichlamviec_nvDTO lichlamviec)
+        {
+            int soluong = LichLamViec_nvDAO.docThongTin(lichlamviec);
+            if (soluong > 0) return true;
+            return false;
+        }
+
     }
 }

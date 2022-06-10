@@ -16,5 +16,17 @@ namespace DA_PTTKHTTT.View.NhanVienDieuHanh
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PhanCongBacSi form = new PhanCongBacSi();
+            form.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ThietLapKhoangThoiGianDangKy form = new ThietLapKhoangThoiGianDangKy();
+            form.ShowDialog();
+        }
     }
 }
