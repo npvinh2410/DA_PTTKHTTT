@@ -104,6 +104,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             this.Controls.Add(this.button1);
             this.Name = "KhachHang_Home";
             this.Text = "KhachHang_Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KhachHang_Home_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

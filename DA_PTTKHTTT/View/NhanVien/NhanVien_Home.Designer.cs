@@ -103,6 +103,7 @@ namespace DA_PTTKHTTT.View.NhanVien
             this.Controls.Add(this.button1);
             this.Name = "NhanVien_Home";
             this.Text = "NhanVien_Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhanVien_Home_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

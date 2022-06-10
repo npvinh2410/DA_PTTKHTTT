@@ -29,16 +29,14 @@ namespace DA_PTTKHTTT.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxThoiGian = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.dateNgay = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxCa = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelTen = new System.Windows.Forms.Label();
+            this.labelMa = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,37 +44,37 @@ namespace DA_PTTKHTTT.View
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnGui = new System.Windows.Forms.Button();
+            this.GridDangKy = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.NGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridDangKy)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // comboBoxThoiGian
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxThoiGian.FormattingEnabled = true;
+            this.comboBoxThoiGian.Items.AddRange(new object[] {
             "Từ 1/6/2022 đến 8/6/2022"});
-            this.comboBox2.Location = new System.Drawing.Point(516, 132);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(203, 24);
-            this.comboBox2.TabIndex = 11;
-            this.comboBox2.Text = "Từ 1/6/2022 đến 8/6/2022";
+            this.comboBoxThoiGian.Location = new System.Drawing.Point(516, 132);
+            this.comboBoxThoiGian.Name = "comboBoxThoiGian";
+            this.comboBoxThoiGian.Size = new System.Drawing.Size(242, 24);
+            this.comboBoxThoiGian.TabIndex = 11;
+            this.comboBoxThoiGian.Text = "Từ 1/6/2022 đến 8/6/2022";
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.btnThem);
+            this.panel1.Controls.Add(this.dateNgay);
+            this.panel1.Controls.Add(this.comboBoxCa);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.labelTen);
+            this.panel1.Controls.Add(this.labelMa);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
@@ -86,78 +84,62 @@ namespace DA_PTTKHTTT.View
             this.panel1.Size = new System.Drawing.Size(414, 396);
             this.panel1.TabIndex = 9;
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.Location = new System.Drawing.Point(300, 334);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 40);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThem.Location = new System.Drawing.Point(300, 334);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(85, 40);
+            this.btnThem.TabIndex = 4;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dateTimePicker1
+            // dateNgay
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 235);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(248, 22);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateNgay.Location = new System.Drawing.Point(137, 219);
+            this.dateNgay.Name = "dateNgay";
+            this.dateNgay.Size = new System.Drawing.Size(248, 22);
+            this.dateNgay.TabIndex = 3;
             // 
-            // comboBox1
+            // comboBoxCa
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxCa.FormattingEnabled = true;
+            this.comboBoxCa.Items.AddRange(new object[] {
             "Sáng",
             "Chiều ",
             "Tối"});
-            this.comboBox1.Location = new System.Drawing.Point(137, 291);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(248, 24);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxCa.Location = new System.Drawing.Point(137, 275);
+            this.comboBoxCa.Name = "comboBoxCa";
+            this.comboBoxCa.Size = new System.Drawing.Size(248, 24);
+            this.comboBoxCa.TabIndex = 2;
+            this.comboBoxCa.Text = "-- Chọn ca làm việc --";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 294);
+            this.label4.Location = new System.Drawing.Point(19, 278);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Chọn ca:";
             // 
-            // label10
+            // labelTen
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(134, 185);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 17);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Bác sĩ";
+            this.labelTen.AutoSize = true;
+            this.labelTen.Location = new System.Drawing.Point(134, 150);
+            this.labelTen.Name = "labelTen";
+            this.labelTen.Size = new System.Drawing.Size(101, 17);
+            this.labelTen.TabIndex = 1;
+            this.labelTen.Text = "Trần Trọng Trí";
             // 
-            // label8
+            // labelMa
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(134, 136);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 17);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Trần Trọng Trí";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(136, 87);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 17);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "NV693";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 185);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 17);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Vai trò:";
+            this.labelMa.AutoSize = true;
+            this.labelMa.Location = new System.Drawing.Point(136, 87);
+            this.labelMa.Name = "labelMa";
+            this.labelMa.Size = new System.Drawing.Size(51, 17);
+            this.labelMa.TabIndex = 1;
+            this.labelMa.Text = "NV693";
             // 
             // label6
             // 
@@ -171,7 +153,7 @@ namespace DA_PTTKHTTT.View
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 136);
+            this.label5.Location = new System.Drawing.Point(17, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 17);
             this.label5.TabIndex = 1;
@@ -180,7 +162,7 @@ namespace DA_PTTKHTTT.View
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 235);
+            this.label3.Location = new System.Drawing.Point(19, 219);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 17);
             this.label3.TabIndex = 1;
@@ -209,41 +191,45 @@ namespace DA_PTTKHTTT.View
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.btnGui);
+            this.panel2.Controls.Add(this.GridDangKy);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Location = new System.Drawing.Point(543, 201);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(519, 396);
+            this.panel2.Size = new System.Drawing.Size(511, 396);
             this.panel2.TabIndex = 10;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(401, 136);
+            this.button4.Location = new System.Drawing.Point(399, 136);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 44);
             this.button4.TabIndex = 4;
             this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnGui
             // 
-            this.button3.Location = new System.Drawing.Point(232, 330);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 44);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Gửi";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGui.Location = new System.Drawing.Point(222, 330);
+            this.btnGui.Name = "btnGui";
+            this.btnGui.Size = new System.Drawing.Size(140, 44);
+            this.btnGui.TabIndex = 4;
+            this.btnGui.Text = "Gửi";
+            this.btnGui.UseVisualStyleBackColor = true;
+            this.btnGui.Click += new System.EventHandler(this.btnGui_Click);
             // 
-            // dataGridView1
+            // GridDangKy
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 83);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(349, 228);
-            this.dataGridView1.TabIndex = 2;
+            this.GridDangKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridDangKy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NGAY,
+            this.CA});
+            this.GridDangKy.Location = new System.Drawing.Point(23, 83);
+            this.GridDangKy.Name = "GridDangKy";
+            this.GridDangKy.RowHeadersWidth = 51;
+            this.GridDangKy.RowTemplate.Height = 24;
+            this.GridDangKy.Size = new System.Drawing.Size(354, 228);
+            this.GridDangKy.TabIndex = 2;
             // 
             // label11
             // 
@@ -263,12 +249,26 @@ namespace DA_PTTKHTTT.View
             this.label12.TabIndex = 8;
             this.label12.Text = "Chọn khoảng thời gian:";
             // 
+            // NGAY
+            // 
+            this.NGAY.HeaderText = "NGAY";
+            this.NGAY.MinimumWidth = 6;
+            this.NGAY.Name = "NGAY";
+            this.NGAY.Width = 125;
+            // 
+            // CA
+            // 
+            this.CA.HeaderText = "CA";
+            this.CA.MinimumWidth = 6;
+            this.CA.Name = "CA";
+            this.CA.Width = 125;
+            // 
             // DangKyLichLamViec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 636);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxThoiGian);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -279,7 +279,7 @@ namespace DA_PTTKHTTT.View
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridDangKy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,16 +287,14 @@ namespace DA_PTTKHTTT.View
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxThoiGian;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.DateTimePicker dateNgay;
+        private System.Windows.Forms.ComboBox comboBoxCa;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelTen;
+        private System.Windows.Forms.Label labelMa;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
@@ -304,9 +302,11 @@ namespace DA_PTTKHTTT.View
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnGui;
+        private System.Windows.Forms.DataGridView GridDangKy;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CA;
     }
 }

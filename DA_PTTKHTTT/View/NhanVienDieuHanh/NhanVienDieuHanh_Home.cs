@@ -28,5 +28,10 @@ namespace DA_PTTKHTTT.View.NhanVienDieuHanh
             ThietLapKhoangThoiGianDangKy form = new ThietLapKhoangThoiGianDangKy();
             form.ShowDialog();
         }
+
+        private void NhanVienDieuHanh_Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

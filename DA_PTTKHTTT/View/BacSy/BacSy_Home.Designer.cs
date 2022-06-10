@@ -56,6 +56,7 @@ namespace DA_PTTKHTTT.View.BacSy
             this.button2.TabIndex = 1;
             this.button2.Text = "XEM LỊCH LÀM VIỆC";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -68,6 +69,7 @@ namespace DA_PTTKHTTT.View.BacSy
             this.button3.TabIndex = 2;
             this.button3.Text = "ĐĂNG KÝ LỊCH LÀM VIỆC";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -91,6 +93,7 @@ namespace DA_PTTKHTTT.View.BacSy
             this.Controls.Add(this.button1);
             this.Name = "BacSy_Home";
             this.Text = "BacSy_Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BacSy_Home_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

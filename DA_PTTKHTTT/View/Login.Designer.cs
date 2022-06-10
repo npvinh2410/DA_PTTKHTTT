@@ -148,6 +148,7 @@ namespace DA_PTTKHTTT.View
             this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -22,8 +22,11 @@ namespace DA_PTTKHTTT.Service
             {
                 return null;
             }
-            
-            
+        }
+
+        public static NhanVienDTO docThongTinNV()
+        {
+            return NhanVienDAO.docThongTin();
         }
     }
 }

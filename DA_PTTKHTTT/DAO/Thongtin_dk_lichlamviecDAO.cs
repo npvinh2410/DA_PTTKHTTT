@@ -38,6 +38,41 @@ namespace DA_PTTKHTTT.DAO
                 conn.Close();
             }
         }
+
+        public static bool themLichDangKy(List<Thongtin_dk_lichlamviecDTO> lichs)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            OracleTransaction transaction = null;
+            try
+            {
+                conn.Open();
+                OracleCommand command = conn.CreateCommand();
+                transaction = conn.BeginTransaction(IsolationLevel.ReadCommitted);
+                command.Transaction = transaction;
+
+                foreach (Thongtin_dk_lichlamviecDTO lich in lichs)
+                {
+                    string query = "insert into DBA_PTTK.thongtin_dk_lichlamviec"
+                                + "\nvalues('" + lich.MaLich + "', user, to_date('" + lich.Ngay.ToString("dd/MM/yyyy") + "', 'dd/mm/yyyy'), '" + lich.Ca + "', sysdate)";
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 
 

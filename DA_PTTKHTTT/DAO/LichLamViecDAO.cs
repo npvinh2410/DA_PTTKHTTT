@@ -60,10 +60,18 @@ namespace DA_PTTKHTTT.DAO
                 DataTable dataTable = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command0);
                 adapter.Fill(dataTable);
-                String maLichCu = dataTable.Rows[0]["MALICH"].ToString();
-                String sttLichCu = new String(maLichCu.Where(Char.IsDigit).ToArray());
-                int stt = Int32.Parse(sttLichCu) +1;
-                lichLamViec.MaLich = "L" + stt.ToString();
+                if(dataTable.Rows.Count > 0)
+                {
+                    String maLichCu = dataTable.Rows[0]["MALICH"].ToString();
+                    String sttLichCu = new String(maLichCu.Where(Char.IsDigit).ToArray());
+                    int stt = Int32.Parse(sttLichCu) + 1;
+                    lichLamViec.MaLich = "L" + stt.ToString();
+                }
+                else
+                {
+                    lichLamViec.MaLich = "L1";
+                }
+
 
                 string query = "insert into DBA_PTTK.lichlamviec "
                                 + "\nvalues('"+lichLamViec.MaLich+ "', to_date('"+ lichLamViec.NgayApDung.ToString("dd/MM/yyyy")+ "', 'dd/mm/yyyy'), to_date('"+lichLamViec.NgayKetThuc.ToString("dd/MM/yyyy") + "', 'dd/mm/yyyy'), "+lichLamViec.TrangThai+")";
@@ -78,6 +86,37 @@ namespace DA_PTTKHTTT.DAO
             catch (Exception ex)
             {
                 return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static LichLamViecDTO docLichLamViec(String maLich)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query = "SELECT MALICH, TO_CHAR(NGAYAPDUNG,'MM/dd/yyyy') AS NGAYAPDUNG, TO_CHAR(NGAYKETTHUC,'MM/dd/yyyy') AS NGAYKETTHUC"
+                                + "\nFROM DBA_PTTK.lichlamviec WHERE TRANGTHAI = '0' and MALICH = '"+maLich+"'";
+                OracleCommand command = new OracleCommand(query, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(dataTable);
+
+                LichLamViecDTO lichLamViec = new LichLamViecDTO();
+
+                lichLamViec.NgayApDung = DateTime.Parse(dataTable.Rows[0]["NGAYAPDUNG"].ToString());
+                lichLamViec.NgayKetThuc = DateTime.Parse(dataTable.Rows[0]["NGAYKETTHUC"].ToString());
+
+                return lichLamViec;
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
             finally
             {

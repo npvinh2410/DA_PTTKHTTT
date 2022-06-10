@@ -16,5 +16,22 @@ namespace DA_PTTKHTTT.View.BacSy
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            XemLichLamViec form = new XemLichLamViec();
+            form.ShowDialog();
+        }
+
+        private void BacSy_Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DangKyLichLamViec form = new DangKyLichLamViec();
+            form.ShowDialog();
+        }
     }
 }

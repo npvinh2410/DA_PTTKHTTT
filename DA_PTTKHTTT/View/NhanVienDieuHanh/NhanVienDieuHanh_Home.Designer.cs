@@ -79,6 +79,7 @@ namespace DA_PTTKHTTT.View.NhanVienDieuHanh
             this.Controls.Add(this.label1);
             this.Name = "NhanVienDieuHanh_Home";
             this.Text = "NhanVienDieuHanh_Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhanVienDieuHanh_Home_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

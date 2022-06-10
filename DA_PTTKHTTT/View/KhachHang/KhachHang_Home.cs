@@ -16,5 +16,10 @@ namespace DA_PTTKHTTT.View.KhachHang
         {
             InitializeComponent();
         }
+
+        private void KhachHang_Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

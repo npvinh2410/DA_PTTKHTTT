@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Threading.Tasks;
 using DA_PTTKHTTT.DAO;
+using DA_PTTKHTTT.DTO;
 
 namespace DA_PTTKHTTT.Service
 {
@@ -16,5 +17,10 @@ namespace DA_PTTKHTTT.Service
             DataTable dataTable = Thongtin_dk_lichlamviecDAO.docLichDangKyNhanVien(maLich, maNV);
             return dataTable;
         }
+        public static bool themLichDangKy(List<Thongtin_dk_lichlamviecDTO> thongTinDangKys)
+        {
+            return Thongtin_dk_lichlamviecDAO.themLichDangKy(thongTinDangKys);
+        }
+
     }
 }

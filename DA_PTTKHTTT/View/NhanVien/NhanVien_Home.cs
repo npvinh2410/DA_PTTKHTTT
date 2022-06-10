@@ -16,5 +16,10 @@ namespace DA_PTTKHTTT.View.NhanVien
         {
             InitializeComponent();
         }
+
+        private void NhanVien_Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
