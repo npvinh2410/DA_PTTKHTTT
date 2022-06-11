@@ -22,5 +22,17 @@ namespace DA_PTTKHTTT.View.QuanLy
             QuanLy.DuyetDSDatMua form = new QuanLy.DuyetDSDatMua();
             form.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            QuanLy.LishSuDatHang form = new QuanLy.LishSuDatHang();
+            form.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            QuanLy.GuiPDHDenNCC form = new QuanLy.GuiPDHDenNCC();
+            form.ShowDialog();
+        }
     }
 }

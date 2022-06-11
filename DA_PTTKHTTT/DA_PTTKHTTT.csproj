@@ -81,26 +81,43 @@
   <ItemGroup>
     <Compile Include="DAO\Connection\DBConnection.cs" />
     <Compile Include="DAO\Connection\DBOracleUtils.cs" />
+    <Compile Include="DAO\CTPhieuDatHangDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\LichLamViecDAO.cs" />
     <Compile Include="DAO\LichLamViec_nvDAO.cs" />
+    <Compile Include="DAO\CTPhieuDatMuaDAO.cs" />
+    <Compile Include="DAO\PhieuDatHangDAO.cs" />
+    <Compile Include="DAO\PhieuDatMuaDAO.cs" />
     <Compile Include="DAO\Thongtin_dk_lichlamviecDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DTO\PhieuDatHangDTO.cs" />
+    <Compile Include="DTO\PhieuDatMuaDTO.cs" />
+    <Compile Include="DTO\CTPhieuDatMuaDTO.cs" />
     <Compile Include="DTO\LichLamViecDTO.cs" />
     <Compile Include="DTO\Lichlamviec_nvDTO.cs" />
     <Compile Include="DTO\LoginInfo.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\Thongtin_dk_lichlamviecDTO.cs" />
+    <Compile Include="Service\GuiPDHService.cs" />
+    <Compile Include="Service\DuyetPDMService.cs" />
     <Compile Include="Service\NhanVienService .cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\LichLamViecService.cs" />
     <Compile Include="Service\Lichlamviec_nvService.cs" />
+    <Compile Include="Service\PhieuDatHangService.cs" />
+    <Compile Include="Service\PhieuDatMuaService.cs" />
     <Compile Include="Service\Thongtin_dk_lichlamviecService.cs" />
     <Compile Include="View\BacSy\BacSy_Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\BacSy\BacSy_Home.Designer.cs">
       <DependentUpon>BacSy_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\DatMuaVacxin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\DatMuaVacxin.designer.cs">
+      <DependentUpon>DatMuaVacxin.cs</DependentUpon>
     </Compile>
     <Compile Include="View\KhachHang\KhachHang.cs">
       <SubType>Form</SubType>
@@ -158,6 +175,24 @@
     <Compile Include="View\NhanVien\XemLichLamViec.Designer.cs">
       <DependentUpon>XemLichLamViec.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\QuanLy\DuyetDSDatMua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLy\DuyetDSDatMua.Designer.cs">
+      <DependentUpon>DuyetDSDatMua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLy\GuiPDHDenNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLy\GuiPDHDenNCC.Designer.cs">
+      <DependentUpon>GuiPDHDenNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLy\LishSuDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLy\LishSuDatHang.Designer.cs">
+      <DependentUpon>LishSuDatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\QuanLy\QuanLy_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +210,9 @@
     </Compile>
     <EmbeddedResource Include="View\BacSy\BacSy_Home.resx">
       <DependentUpon>BacSy_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\DatMuaVacxin.resx">
+      <DependentUpon>DatMuaVacxin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\KhachHang\KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
@@ -202,6 +240,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NhanVien\XemLichLamViec.resx">
       <DependentUpon>XemLichLamViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLy\DuyetDSDatMua.resx">
+      <DependentUpon>DuyetDSDatMua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLy\GuiPDHDenNCC.resx">
+      <DependentUpon>GuiPDHDenNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLy\LishSuDatHang.resx">
+      <DependentUpon>LishSuDatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLy\QuanLy_Home.resx">
       <DependentUpon>QuanLy_Home.cs</DependentUpon>
