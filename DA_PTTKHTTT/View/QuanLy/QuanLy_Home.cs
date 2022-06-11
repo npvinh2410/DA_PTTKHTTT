@@ -34,5 +34,15 @@ namespace DA_PTTKHTTT.View.QuanLy
             QuanLy.GuiPDHDenNCC form = new QuanLy.GuiPDHDenNCC();
             form.ShowDialog();
         }
+
+        private void QuanLy_Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuanLy_Home_Closing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace DA_PTTKHTTT.View.QuanLy
+﻿namespace DA_PTTKHTTT.View.KhachHang
 {
     partial class DatMuaVacxin
     {
@@ -48,13 +48,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtVacxinKhac = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridDatMuaLe = new System.Windows.Forms.DataGridView();
+            this.gridDatMuaGoi = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -98,8 +93,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDatMuaLe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDatMuaGoi)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -277,8 +272,8 @@
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.txtVacxinKhac);
-            this.panel1.Controls.Add(this.dataGridView2);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.gridDatMuaLe);
+            this.panel1.Controls.Add(this.gridDatMuaGoi);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.tabControl2);
@@ -324,61 +319,30 @@
             this.txtVacxinKhac.Size = new System.Drawing.Size(279, 22);
             this.txtVacxinKhac.TabIndex = 44;
             this.txtVacxinKhac.Text = "Nhập tên vắc xin tại đây";
-            this.txtVacxinKhac.Click += new System.EventHandler(this.txtVacxinOther_TextClick);
-            this.txtVacxinKhac.TextChanged += new System.EventHandler(this.txtVacxinOther_TextChanged_1);
+            this.txtVacxinKhac.Click += new System.EventHandler(this.txtVacxinKhac_TextClick);
+            this.txtVacxinKhac.TextChanged += new System.EventHandler(this.txtVacxinKhac_TextChanged_1);
             // 
-            // dataGridView2
+            // gridDatMuaLe
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.dataGridView2.Location = new System.Drawing.Point(305, 208);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(372, 113);
-            this.dataGridView2.TabIndex = 40;
+            this.gridDatMuaLe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridDatMuaLe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDatMuaLe.Location = new System.Drawing.Point(305, 208);
+            this.gridDatMuaLe.Name = "gridDatMuaLe";
+            this.gridDatMuaLe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridDatMuaLe.Size = new System.Drawing.Size(372, 113);
+            this.gridDatMuaLe.TabIndex = 40;
+            this.gridDatMuaLe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDatMuaLe_CellContentClick_1);
             // 
-            // dataGridViewTextBoxColumn1
+            // gridDatMuaGoi
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Vắc xin";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Vắc xin";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(305, 57);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(372, 122);
-            this.dataGridView1.TabIndex = 39;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã Gói";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên Gói";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "SL vắc xin";
-            this.Column4.Name = "Column4";
+            this.gridDatMuaGoi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridDatMuaGoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDatMuaGoi.Location = new System.Drawing.Point(305, 57);
+            this.gridDatMuaGoi.Name = "gridDatMuaGoi";
+            this.gridDatMuaGoi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridDatMuaGoi.Size = new System.Drawing.Size(372, 122);
+            this.gridDatMuaGoi.TabIndex = 39;
+            this.gridDatMuaGoi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDatMuaGoi_CellContentClick);
             // 
             // label3
             // 
@@ -798,8 +762,8 @@
             this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDatMuaLe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDatMuaGoi)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
@@ -864,13 +828,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnCheckInfo;
         private System.Windows.Forms.TextBox txtVacxinKhac;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridView gridDatMuaLe;
+        private System.Windows.Forms.DataGridView gridDatMuaGoi;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;

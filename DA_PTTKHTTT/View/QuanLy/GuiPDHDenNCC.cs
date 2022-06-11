@@ -45,5 +45,18 @@ namespace DA_PTTKHTTT.View.QuanLy
         {
 
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (!GuiPDHService.GuiPDH())
+            {
+                MessageBox.Show("Gửi không thành công!");
+            }
+            else
+            {
+                gridCTPDH.DataSource = null;
+                txtAmountVC.Text = "0";
+            }
+        }
     }
 }

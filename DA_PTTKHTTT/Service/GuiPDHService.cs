@@ -14,7 +14,18 @@ namespace DA_PTTKHTTT.Service
     {
         public static bool GuiPDH()
         {
+            string maDHCu = PhieuDatHangDAO.docIDChoDatPhieuDatHang();
+            string tienTo = maDHCu.Substring(0, 2);
+            string idCu = maDHCu.Substring(2);
+            string idMoi = (Int32.Parse(maDHCu.Substring(2)) + 1).ToString();
+            string maDHMoi = tienTo + idMoi.PadLeft(idCu.Length - idMoi.Length + 1, '0'); ;
 
+            if (!PhieuDatHangDAO.capNhatPhieuDatHang(maDHCu))
+            {
+                return false;
+            }
+
+            PhieuDatHangDAO.themPhieuDatHang(maDHMoi);
 
             return true;
         }

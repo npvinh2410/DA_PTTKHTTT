@@ -89,5 +89,10 @@ namespace DA_PTTKHTTT.View.QuanLy
 
             hienThiDSDatMua();
         }
+
+        private void DuyetDSDatMua_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

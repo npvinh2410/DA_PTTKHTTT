@@ -86,10 +86,16 @@
     <Compile Include="DAO\LichLamViecDAO.cs" />
     <Compile Include="DAO\LichLamViec_nvDAO.cs" />
     <Compile Include="DAO\CTPhieuDatMuaDAO.cs" />
+    <Compile Include="DAO\GoiTiemDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\VacXinDAO.cs" />
     <Compile Include="DAO\PhieuDatHangDAO.cs" />
     <Compile Include="DAO\PhieuDatMuaDAO.cs" />
     <Compile Include="DAO\Thongtin_dk_lichlamviecDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DTO\GoiTiemDTO.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\VacXinDTO.cs" />
     <Compile Include="DTO\PhieuDatHangDTO.cs" />
     <Compile Include="DTO\PhieuDatMuaDTO.cs" />
     <Compile Include="DTO\CTPhieuDatMuaDTO.cs" />
@@ -98,6 +104,7 @@
     <Compile Include="DTO\LoginInfo.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\Thongtin_dk_lichlamviecDTO.cs" />
+    <Compile Include="Service\DatMuaVCService.cs" />
     <Compile Include="Service\GuiPDHService.cs" />
     <Compile Include="Service\DuyetPDMService.cs" />
     <Compile Include="Service\NhanVienService .cs" />

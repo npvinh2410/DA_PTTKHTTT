@@ -123,6 +123,7 @@
             this.Controls.Add(this.gridDuyetPDM);
             this.Name = "DuyetDSDatMua";
             this.Text = "DuyetDSDatMua";
+            this.Load += new System.EventHandler(this.DuyetDSDatMua_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridDuyetPDM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDuyetCTPDM)).EndInit();
             this.ResumeLayout(false);

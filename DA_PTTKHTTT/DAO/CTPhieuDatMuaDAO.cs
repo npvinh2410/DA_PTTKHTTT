@@ -85,5 +85,82 @@ namespace DA_PTTKHTTT.DAO
                 conn.Close();
             }
         }
+
+        public static bool themCTPhieuDatMuaTheoGoi(string maPD, string maGoi)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query0 = "select mavc from DBA_PTTK.ct_goitiem where magt='"+maGoi+"'";
+                OracleCommand command0 = new OracleCommand(query0, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command0);
+                adapter.Fill(dataTable);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    for(int i = 0; i < dataTable.Rows.Count; i++)
+                    {
+                        String maVC = dataTable.Rows[i]["MAVC"].ToString();
+                        themCTPhieuDatMua(maPD, maVC, 1);
+                    }
+              
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static bool themCTPhieuDatMua(string maPD, string maVC, int soLuong)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query0 = "select * from DBA_PTTK.CT_PHIEUDATMUA where MAPD = " + "'" + maPD + "'" + " and MAVC = " + "'" + maVC + "'";
+
+                OracleCommand command0 = new OracleCommand(query0, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command0);
+                adapter.Fill(dataTable);
+
+                string query;
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    query = "update DBA_PTTK.CT_PHIEUDATMUA set SOLUONG = SOLUONG + " + soLuong + " where MAPD = " + "'" + maPD + "'" + " and MAVC = " + "'" + maVC + "'";
+                }
+                else
+                {
+                    query = "insert into DBA_PTTK.CT_PHIEUDATMUA values('" + maPD + "', '" + maVC + "', '" + soLuong + "', 0, 0)";
+                }
+
+                OracleCommand command = conn.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

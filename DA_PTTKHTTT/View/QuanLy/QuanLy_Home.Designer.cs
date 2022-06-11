@@ -127,6 +127,8 @@ namespace DA_PTTKHTTT.View.QuanLy
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuanLy_Home";
             this.Text = "QuanLy_Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuanLy_Home_Closing);
+            this.Load += new System.EventHandler(this.QuanLy_Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

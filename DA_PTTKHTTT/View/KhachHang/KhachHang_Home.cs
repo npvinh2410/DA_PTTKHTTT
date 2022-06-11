@@ -21,5 +21,16 @@ namespace DA_PTTKHTTT.View.KhachHang
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void KhachHang_Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            View.KhachHang.DatMuaVacxin form = new View.KhachHang.DatMuaVacxin();
+            form.ShowDialog();
+        }
     }
 }

@@ -55,6 +55,7 @@
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Gửi";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label1
             // 

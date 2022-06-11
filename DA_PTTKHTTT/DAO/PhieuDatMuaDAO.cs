@@ -37,6 +37,51 @@ namespace DA_PTTKHTTT.DAO
             }
         }
 
+        public static string themPhieuDatMua(string maKH)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query0 = "select mapd from DBA_PTTK.phieudatmua order by mapd desc";
+                OracleCommand command0 = new OracleCommand(query0, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command0);
+                adapter.Fill(dataTable);
+
+                string maPD = null;
+                if (dataTable.Rows.Count > 0)
+                {
+                    String maCu = dataTable.Rows[0]["MAPD"].ToString();
+                    String sttCu = new String(maCu.Where(Char.IsDigit).ToArray());
+                    int stt = Int32.Parse(sttCu) + 1;
+                    maPD = "PD" + stt.ToString();
+                }
+                else
+                {
+                    maPD = "PD1";
+                }
+
+                string query = "insert into DBA_PTTK.PhieuDatMua values('" + maPD+"', "+ "TO_DATE('" + DateTime.Now.ToString("yyyy/MM/dd") + "', 'yyyy/mm/dd'), '"+maKH+"', null, 'Chờ duyệt', 0)";
+
+                OracleCommand command = conn.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+
+                return maPD;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public static DataTable docDSPhieuDatMuaChoDuyet()
         {
             OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);

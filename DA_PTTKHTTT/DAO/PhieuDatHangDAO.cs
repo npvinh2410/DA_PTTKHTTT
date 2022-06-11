@@ -116,5 +116,57 @@ namespace DA_PTTKHTTT.DAO
                 conn.Close();
             }
         }
+
+        public static bool capNhatPhieuDatHang(string maDH)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query = "update DBA_PTTK.PhieuDatHang set ngaydat = TO_DATE('" + DateTime.Now.ToString("yyyy/MM/dd") + "', 'yyyy/mm/dd')" + ", trangthai = 'Đã đặt' where madh = '" + maDH + "'";
+
+                OracleCommand command = conn.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public static bool themPhieuDatHang(string maDH)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query = "insert into DBA_PTTK.PhieuDatHang values('" + maDH + "', null, null, 'Chờ đặt')";
+
+                OracleCommand command = conn.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
 }
