@@ -39,6 +39,10 @@ namespace DA_PTTKHTTT.View
             this.label5 = new System.Windows.Forms.Label();
             this.btnHienThi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelTrungtam = new System.Windows.Forms.Label();
+            this.labelVaitro = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridLichLamViec)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +60,10 @@ namespace DA_PTTKHTTT.View
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.labelTrungtam);
+            this.panel1.Controls.Add(this.labelVaitro);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.comboBoxThoiGian);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.labelTen);
@@ -71,18 +79,16 @@ namespace DA_PTTKHTTT.View
             // comboBoxThoiGian
             // 
             this.comboBoxThoiGian.FormattingEnabled = true;
-            this.comboBoxThoiGian.Items.AddRange(new object[] {
-            "Từ 1/6/2022 đến 8/6/2022"});
-            this.comboBoxThoiGian.Location = new System.Drawing.Point(131, 138);
+            this.comboBoxThoiGian.Location = new System.Drawing.Point(131, 174);
             this.comboBoxThoiGian.Name = "comboBoxThoiGian";
             this.comboBoxThoiGian.Size = new System.Drawing.Size(206, 24);
             this.comboBoxThoiGian.TabIndex = 15;
-            this.comboBoxThoiGian.Text = "Từ 1/6/2022 đến 8/6/2022";
+            this.comboBoxThoiGian.Text = "-- Chọn khoảng thời gian --";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(4, 138);
+            this.label12.Location = new System.Drawing.Point(4, 174);
             this.label12.MaximumSize = new System.Drawing.Size(100, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 34);
@@ -92,7 +98,7 @@ namespace DA_PTTKHTTT.View
             // labelTen
             // 
             this.labelTen.AutoSize = true;
-            this.labelTen.Location = new System.Drawing.Point(128, 80);
+            this.labelTen.Location = new System.Drawing.Point(128, 59);
             this.labelTen.Name = "labelTen";
             this.labelTen.Size = new System.Drawing.Size(101, 17);
             this.labelTen.TabIndex = 9;
@@ -119,7 +125,7 @@ namespace DA_PTTKHTTT.View
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 80);
+            this.label5.Location = new System.Drawing.Point(3, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 17);
             this.label5.TabIndex = 13;
@@ -127,7 +133,7 @@ namespace DA_PTTKHTTT.View
             // 
             // btnHienThi
             // 
-            this.btnHienThi.Location = new System.Drawing.Point(173, 200);
+            this.btnHienThi.Location = new System.Drawing.Point(262, 216);
             this.btnHienThi.Name = "btnHienThi";
             this.btnHienThi.Size = new System.Drawing.Size(75, 35);
             this.btnHienThi.TabIndex = 7;
@@ -144,6 +150,42 @@ namespace DA_PTTKHTTT.View
             this.label1.Size = new System.Drawing.Size(282, 39);
             this.label1.TabIndex = 14;
             this.label1.Text = "Xem lịch làm việc";
+            // 
+            // labelTrungtam
+            // 
+            this.labelTrungtam.AutoSize = true;
+            this.labelTrungtam.Location = new System.Drawing.Point(126, 135);
+            this.labelTrungtam.Name = "labelTrungtam";
+            this.labelTrungtam.Size = new System.Drawing.Size(67, 17);
+            this.labelTrungtam.TabIndex = 16;
+            this.labelTrungtam.Text = "Idonknow";
+            // 
+            // labelVaitro
+            // 
+            this.labelVaitro.AutoSize = true;
+            this.labelVaitro.Location = new System.Drawing.Point(128, 95);
+            this.labelVaitro.Name = "labelVaitro";
+            this.labelVaitro.Size = new System.Drawing.Size(46, 17);
+            this.labelVaitro.TabIndex = 17;
+            this.labelVaitro.Text = "Bác sĩ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Mã trung tâm:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 95);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 17);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Vai trò:";
             // 
             // XemLichLamViec
             // 
@@ -175,5 +217,9 @@ namespace DA_PTTKHTTT.View
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnHienThi;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTrungtam;
+        private System.Windows.Forms.Label labelVaitro;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
     }
 }

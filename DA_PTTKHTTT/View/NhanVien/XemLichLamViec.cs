@@ -38,6 +38,8 @@ namespace DA_PTTKHTTT.View
             NhanVienDTO nhanVien = Service.NhanVienService.docThongTinNV();
             labelMa.Text = nhanVien.MaNV;
             labelTen.Text = nhanVien.TenNV;
+            labelVaitro.Text = nhanVien.ViTri;
+            labelTrungtam.Text = nhanVien.MaTT;
         }
 
         private void btnHienThi_Click(object sender, EventArgs e)

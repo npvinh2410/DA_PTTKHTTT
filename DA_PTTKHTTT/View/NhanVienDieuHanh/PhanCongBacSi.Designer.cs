@@ -150,8 +150,6 @@ namespace DA_PTTKHTTT
             // comboBoxThoiGian
             // 
             this.comboBoxThoiGian.FormattingEnabled = true;
-            this.comboBoxThoiGian.Items.AddRange(new object[] {
-            "Từ 1/6/2022 đến 8/6/2022"});
             this.comboBoxThoiGian.Location = new System.Drawing.Point(333, 30);
             this.comboBoxThoiGian.Name = "comboBoxThoiGian";
             this.comboBoxThoiGian.Size = new System.Drawing.Size(232, 24);
