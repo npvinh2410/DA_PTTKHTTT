@@ -150,5 +150,31 @@ namespace DA_PTTKHTTT.DAO
                 conn.Close();
             }
         }
+
+        public static DataTable docDSPhieuDatMuaKH(string maKH)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query = "select * from DBA_PTTK.PhieuDatMua where makh = '" + maKH + "'";
+
+                OracleCommand command = new OracleCommand(query, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

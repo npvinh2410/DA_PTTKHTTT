@@ -40,12 +40,15 @@
             // gridLichSuDH
             // 
             this.gridLichSuDH.AllowUserToAddRows = false;
+            this.gridLichSuDH.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridLichSuDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridLichSuDH.Location = new System.Drawing.Point(64, 78);
+            this.gridLichSuDH.Location = new System.Drawing.Point(64, 113);
             this.gridLichSuDH.MultiSelect = false;
             this.gridLichSuDH.Name = "gridLichSuDH";
+            this.gridLichSuDH.ReadOnly = true;
+            this.gridLichSuDH.RowHeadersVisible = false;
             this.gridLichSuDH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridLichSuDH.Size = new System.Drawing.Size(345, 263);
+            this.gridLichSuDH.Size = new System.Drawing.Size(377, 263);
             this.gridLichSuDH.TabIndex = 0;
             this.gridLichSuDH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLichSuDH_CellContentClick);
             this.gridLichSuDH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridLichSuDH_MouseClick);
@@ -54,11 +57,14 @@
             // 
             this.gridCTLichSuDH.AllowUserToAddRows = false;
             this.gridCTLichSuDH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridCTLichSuDH.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridCTLichSuDH.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.gridCTLichSuDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCTLichSuDH.Location = new System.Drawing.Point(425, 78);
+            this.gridCTLichSuDH.Location = new System.Drawing.Point(458, 113);
             this.gridCTLichSuDH.Name = "gridCTLichSuDH";
-            this.gridCTLichSuDH.Size = new System.Drawing.Size(316, 263);
+            this.gridCTLichSuDH.ReadOnly = true;
+            this.gridCTLichSuDH.RowHeadersVisible = false;
+            this.gridCTLichSuDH.Size = new System.Drawing.Size(283, 263);
             this.gridCTLichSuDH.TabIndex = 1;
             this.gridCTLichSuDH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCTLichSuDH_CellContentClick);
             // 
@@ -67,7 +73,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(316, 23);
+            this.label1.Location = new System.Drawing.Point(312, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(187, 25);
             this.label1.TabIndex = 2;
@@ -76,7 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 62);
+            this.label2.Location = new System.Drawing.Point(61, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 3;
@@ -85,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(422, 62);
+            this.label3.Location = new System.Drawing.Point(455, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 4;
@@ -95,6 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

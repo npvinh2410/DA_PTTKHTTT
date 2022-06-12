@@ -142,6 +142,7 @@ namespace DA_PTTKHTTT.DAO
                 conn.Close();
             }
         }
+
         public static bool themPhieuDatHang(string maDH)
         {
             OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);

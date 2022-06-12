@@ -48,14 +48,23 @@ namespace DA_PTTKHTTT.View.QuanLy
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (!GuiPDHService.GuiPDH())
+            int soLuong = Int32.Parse(txtAmountVC.Text);
+
+            if(soLuong > 0)
             {
-                MessageBox.Show("Gửi không thành công!");
+                if (!GuiPDHService.GuiPDH())
+                {
+                    MessageBox.Show("Gửi không thành công!");
+                }
+                else
+                {
+                    gridCTPDH.DataSource = null;
+                    txtAmountVC.Text = "0";
+                }
             }
             else
             {
-                gridCTPDH.DataSource = null;
-                txtAmountVC.Text = "0";
+                MessageBox.Show("Phiếu trống, không thể gửi!");
             }
         }
     }

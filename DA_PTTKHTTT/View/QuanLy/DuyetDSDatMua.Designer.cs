@@ -41,9 +41,13 @@
             // 
             // gridDuyetPDM
             // 
+            this.gridDuyetPDM.AllowUserToAddRows = false;
+            this.gridDuyetPDM.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridDuyetPDM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDuyetPDM.Location = new System.Drawing.Point(51, 112);
             this.gridDuyetPDM.Name = "gridDuyetPDM";
+            this.gridDuyetPDM.ReadOnly = true;
+            this.gridDuyetPDM.RowHeadersVisible = false;
             this.gridDuyetPDM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDuyetPDM.Size = new System.Drawing.Size(276, 233);
             this.gridDuyetPDM.TabIndex = 0;
@@ -52,9 +56,13 @@
             // 
             // gridDuyetCTPDM
             // 
+            this.gridDuyetCTPDM.AllowUserToAddRows = false;
+            this.gridDuyetCTPDM.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridDuyetCTPDM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDuyetCTPDM.ColumnHeadersVisible = false;
             this.gridDuyetCTPDM.Location = new System.Drawing.Point(350, 112);
             this.gridDuyetCTPDM.Name = "gridDuyetCTPDM";
+            this.gridDuyetCTPDM.ReadOnly = true;
             this.gridDuyetCTPDM.Size = new System.Drawing.Size(384, 233);
             this.gridDuyetCTPDM.TabIndex = 1;
             this.gridDuyetCTPDM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDuyetCTPDM_CellContentClick);
@@ -113,6 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

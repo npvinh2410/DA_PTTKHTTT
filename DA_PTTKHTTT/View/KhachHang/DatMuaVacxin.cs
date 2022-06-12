@@ -29,11 +29,37 @@ namespace DA_PTTKHTTT.View.KhachHang
             gridDatMuaGoi.AllowUserToAddRows = false;
         }
 
+        private void docCTGoiTiem(string maGT)
+        {
+            DataTable dataTable = DatMuaVCService.docCTGoiTiem(maGT);
+            gridTraCuuVC.DataSource = dataTable;
+            dataTable.Columns.Remove("SOLUONGTON");
+            dataTable.Columns.Remove("DONGIA");
+            gridTraCuuVC.AllowUserToAddRows = false;
+        }
+
         private void docDSVC()
         {
             DataTable dataTable = DatMuaVCService.docDanhSachVC();
             gridDatMuaLe.DataSource = dataTable;
+            dataTable.Columns.Remove("SOLUONGTON");
             gridDatMuaLe.AllowUserToAddRows = false;
+        }
+
+        private void docDSDatMuaKH(string maKH)
+        {
+            DataTable dataTable = DatMuaVCService.docDSDatMuaKH(maKH);
+            gridLSDSDM.DataSource = dataTable;
+            dataTable.Columns.Remove("MAKH");
+            dataTable.Columns.Remove("MANV");
+            gridLSDSDM.AllowUserToAddRows = false;
+        }
+
+        private void docCTPhieuDatMua(string maPD)
+        {
+            DataTable dataTable = DatMuaVCService.docCTPhieuDatMua(maPD);
+            gridLSCTDM.DataSource = dataTable;
+            gridLSCTDM.AllowUserToAddRows = false;
         }
 
         private List<string> docDSGoiDuocChon()
@@ -62,13 +88,7 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         private bool kiemTraChonMua(int slGoi, int slVC)
         {
-            string vc = txtVacxinKhac.Text;
-            if(vc == "Nhập tên vắc xin tại đây")
-            {
-                vc = "";
-            }
-
-            if (slGoi == 0 && slVC == 0 && vc == "")
+            if (slGoi == 0 && slVC == 0)
                 return false;
 
             return true;
@@ -140,21 +160,6 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         }
 
-        private void gridDatMuaGoi_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void label8_Click(object sender, EventArgs e)
         {
 
@@ -182,7 +187,16 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int index = tabControl1.SelectedIndex;
+            if(index == 1)
+            {
+                DataTable dataTable = DatMuaVCService.docGoiTiem();
+                gridTraCuuGoi.DataSource = dataTable;
+                dataTable.Columns.Remove("THANHTIEN");
+                gridTraCuuGoi.AllowUserToAddRows = false;
 
+                docCTGoiTiem(gridTraCuuGoi.SelectedRows[0].Cells[0].Value.ToString());
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -267,6 +281,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             if (!kiemTraChonMua(dsMaGoi.Count, dsMaVC.Count))
             {
                 MessageBox.Show("Cần chọn vắc xin!");
+                return;
             }
 
             string maKH = "";
@@ -288,20 +303,16 @@ namespace DA_PTTKHTTT.View.KhachHang
                 kh = DatMuaVCService.khoiTao(tenKH, sdt, diaChi, gioiTinh);
             }
 
-            string vcKhac = txtVacxinKhac.Text;
-            if (vcKhac == "Nhập tên vắc xin tại đây")
-            {
-                vcKhac = "";
-            }
+            maKH = DatMuaVCService.datMuaVC(maKH, kh, dsMaGoi, dsMaVC);
 
-
-            if(DatMuaVCService.datMua(maKH, kh, dsMaGoi, dsMaVC, vcKhac))
+            if (maKH==null)
             {
-                MessageBox.Show("Thành công!");
+                MessageBox.Show("Không thành công!");
             }
             else
             {
-                MessageBox.Show("Không thành công!");
+                MessageBox.Show("Thành công!");
+                MessageBox.Show("Mã Khách hàng của bạn là: " + maKH);
             }
         }
 
@@ -330,22 +341,12 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         }
 
-        private void txtVacxinKhac_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabPage4_Click(object sender, EventArgs e)
         {
 
         }
 
         private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gridDatMuaLe_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -405,19 +406,6 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         }
 
-        private void txtVacxinKhac_TextChanged_1(object sender, EventArgs e)
-        {
- 
-        }
-
-        private void txtVacxinKhac_TextClick(object sender, EventArgs e)
-        {
-            if(txtVacxinKhac.Text == "Nhập tên vắc xin tại đây")
-            {
-                txtVacxinKhac.Text = "";
-            }
-        }
-
         private void txtInfoPhone_TextChanged_1(object sender, EventArgs e)
         {
 
@@ -443,14 +431,72 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         }
 
-        private void dataGridView7_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gridDatMuaLe_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void gridDatMuaLe_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void btnXemLS_Click(object sender, EventArgs e)
         {
+            string maKH = txtLSmaKH.Text;
 
+            if(maKH == "" || maKH == "Nhập mã KH")
+            {
+                MessageBox.Show("Vui lòng nhập mã khách hàng!");
+                return;
+            }
+
+            docDSDatMuaKH(maKH);
+        }
+
+        private void gridLSDSDM_MouseClick(object sender, MouseEventArgs e)
+        {
+            string maPD = gridLSDSDM.SelectedRows[0].Cells[0].Value.ToString();
+            docCTPhieuDatMua(maPD);
+        }
+
+        private void gridLSDSDM_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+             
+        }
+
+        private void txtLSmaKH_Click(object sender, EventArgs e)
+        {
+            if (txtLSmaKH.Text == "Nhập mã KH")
+            {
+                txtLSmaKH.Text = "";
+            }
+        }
+
+        private void gridDatMuaGoi_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            gridDatMuaGoi.ClearSelection();
+        }
+
+        private void gridDatMuaLe_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            gridDatMuaLe.ClearSelection();
+        }
+
+        private void radioBtnTatCaVC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioBtnTatCaVC.Checked)
+            {
+                DataTable dataTable = DatMuaVCService.docDanhSachVC();
+                gridTraCuuVC.DataSource = dataTable;
+                dataTable.Columns.Remove("SOLUONGTON");
+                dataTable.Columns.Remove("DONGIA");
+                gridTraCuuVC.AllowUserToAddRows = false;
+
+                gridTraCuuGoi.ClearSelection();
+            }
+        }
+
+        private void gridTraCuuGoi_MouseClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string maGT = gridTraCuuGoi.SelectedRows[0].Cells[0].Value.ToString();
+            docCTGoiTiem(maGT);
+            radioBtnTatCaVC.Checked = false;
         }
     }
 }

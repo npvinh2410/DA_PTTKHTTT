@@ -55,7 +55,7 @@ namespace DA_PTTKHTTT.Service
             return kh;
         }
 
-        public static bool datMua(string maKH, KhachHangDTO kh, List<string> dsMaGoi, List<string> dsMaVC, string vcKhac)
+        public static string datMuaVC(string maKH, KhachHangDTO kh, List<string> dsMaGoi, List<string> dsMaVC)
         {
             if (maKH == "")
             {
@@ -64,35 +64,38 @@ namespace DA_PTTKHTTT.Service
 
             if (maKH == null)
             {
-                return false;
+                return null;
             }
 
             string maPD = PhieuDatMuaDAO.themPhieuDatMua(maKH);
 
             if(maPD == null)
             {
-                return false;
+                return null;
             }
 
             for(int i = 0; i < dsMaGoi.Count; i++)
             {
                 if(!CTPhieuDatMuaDAO.themCTPhieuDatMuaTheoGoi(maPD, dsMaGoi[i]))
-                    return false;
+                    return null;
             }
 
             for(int j = 0; j < dsMaVC.Count; j++)
             {
                 if (!CTPhieuDatMuaDAO.themCTPhieuDatMua(maPD, dsMaVC[j], 1)) 
-                    return false;
+                    return null;
             }
 
-            if (vcKhac != "")
-            {
-                /*if (!CTPhieuDatMuaDAO.themCTPhieuDatMua(maPD, vcKhac, 1))
-                    return false;*/
-            }
+            return maKH;
+        }
 
-            return true;
+        public static DataTable docDSDatMuaKH(string maKH)
+        {
+            return PhieuDatMuaDAO.docDSPhieuDatMuaKH(maKH);
+        }
+        public static DataTable docCTPhieuDatMua(string maPD)
+        {
+            return CTPhieuDatMuaDAO.docCTPhieuDatMua(maPD);
         }
     }
 }

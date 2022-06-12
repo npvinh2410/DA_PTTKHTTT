@@ -43,7 +43,7 @@ namespace DA_PTTKHTTT.DAO
             {
                 conn.Open();
 
-                string query = "select * from dba_pttk.ct_goitiem where magt = '" + maGT + "'";
+                string query = "select * from dba_pttk.ct_goitiem g, dba_pttk.vacxin v where g.mavc = v.mavc and g.magt = '" + maGT + "'";
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dataTable = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command);

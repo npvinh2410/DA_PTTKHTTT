@@ -32,17 +32,21 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAmountVC = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridCTPDH)).BeginInit();
             this.SuspendLayout();
             // 
             // gridCTPDH
             // 
             this.gridCTPDH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridCTPDH.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridCTPDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCTPDH.Location = new System.Drawing.Point(136, 68);
+            this.gridCTPDH.Location = new System.Drawing.Point(135, 80);
             this.gridCTPDH.MultiSelect = false;
             this.gridCTPDH.Name = "gridCTPDH";
             this.gridCTPDH.ReadOnly = true;
+            this.gridCTPDH.RowHeadersVisible = false;
             this.gridCTPDH.Size = new System.Drawing.Size(542, 253);
             this.gridCTPDH.TabIndex = 0;
             this.gridCTPDH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCTPDH_CellContentClick);
@@ -76,11 +80,34 @@
             this.txtAmountVC.Text = "00";
             this.txtAmountVC.TextChanged += new System.EventHandler(this.txtAmountVC_TextChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Location = new System.Drawing.Point(205, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(407, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Gửi phiếu đặt hàng đến nhà cung cấp";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(132, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Danh sách vắc xin chờ đặt";
+            // 
             // GuiPDHDenNCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAmountVC);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSubmit);
@@ -99,5 +126,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAmountVC;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
