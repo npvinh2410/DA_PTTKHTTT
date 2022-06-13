@@ -11,19 +11,19 @@ using System.Windows.Forms;
 
 namespace DA_PTTKHTTT.View.BacSy
 {
-    List<BenhNen> listItem;
+    /*List<BenhNen> listItem;*/
     public partial class KhamSangLoc : Form
     {
         public KhamSangLoc()
         {
             InitializeComponent();
 
-            listItem = new List<BenhNen>()
+            /*listItem = new List<BenhNen>()
             {
                 new BenhNen(){Status = "Có"},
                 new BenhNen(){Status = "Không"}
             };
-            comboBox1.DataSource = listItem;
+            comboBox1.DataSource = listItem;*/
             comboBox1.DisplayMember = "Name";
 
             string MaKH = null;

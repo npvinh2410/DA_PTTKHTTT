@@ -32,5 +32,11 @@ namespace DA_PTTKHTTT.View.KhachHang
             View.KhachHang.DatMuaVacxin form = new View.KhachHang.DatMuaVacxin();
             form.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LichSuTiemChung form = new LichSuTiemChung();
+            form.ShowDialog();
+        }
     }
 }
