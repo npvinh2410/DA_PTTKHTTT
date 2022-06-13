@@ -11,11 +11,22 @@ using System.Windows.Forms;
 
 namespace DA_PTTKHTTT.View.BacSy
 {
+    List<BenhNen> listItem;
     public partial class KhamSangLoc : Form
     {
-        public KhamSangLoc(string MaKH)
+        public KhamSangLoc()
         {
             InitializeComponent();
+
+            listItem = new List<BenhNen>()
+            {
+                new BenhNen(){Status = "Có"},
+                new BenhNen(){Status = "Không"}
+            };
+            comboBox1.DataSource = listItem;
+            comboBox1.DisplayMember = "Name";
+
+            string MaKH = null;
             xemHoSoKhachHang(MaKH);
         }
 
@@ -32,5 +43,11 @@ namespace DA_PTTKHTTT.View.BacSy
         {
 
         }
+
+    }
+
+    public class BenhNen
+    {
+        public string Status { get; set; }
     }
 }

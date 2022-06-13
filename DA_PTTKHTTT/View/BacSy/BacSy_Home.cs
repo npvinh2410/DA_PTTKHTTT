@@ -33,5 +33,11 @@ namespace DA_PTTKHTTT.View.BacSy
             DangKyLichLamViec form = new DangKyLichLamViec();
             form.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TiemChung form = new TiemChung();
+            form.ShowDialog();
+        }
     }
 }

@@ -82,6 +82,7 @@
     <Compile Include="DAO\Connection\DBConnection.cs" />
     <Compile Include="DAO\Connection\DBOracleUtils.cs" />
     <Compile Include="DAO\CTPhieuDatHangDAO.cs" />
+    <Compile Include="DAO\HoSoTiemChungDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\LichLamViecDAO.cs" />
     <Compile Include="DAO\LichLamViec_nvDAO.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="DAO\Thongtin_dk_lichlamviecDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DTO\GoiTiemDTO.cs" />
+    <Compile Include="DTO\HoSoTiemChungDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\VacXinDTO.cs" />
     <Compile Include="DTO\PhieuDatHangDTO.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Service\DatMuaVCService.cs" />
     <Compile Include="Service\GuiPDHService.cs" />
     <Compile Include="Service\DuyetPDMService.cs" />
+    <Compile Include="Service\HoSoTiemChungService.cs" />
     <Compile Include="Service\NhanVienService .cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\LichLamViecService.cs" />
@@ -119,6 +122,18 @@
     </Compile>
     <Compile Include="View\BacSy\BacSy_Home.Designer.cs">
       <DependentUpon>BacSy_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BacSy\KhamSangLoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BacSy\KhamSangLoc.Designer.cs">
+      <DependentUpon>KhamSangLoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BacSy\TiemChung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BacSy\TiemChung.Designer.cs">
+      <DependentUpon>TiemChung.cs</DependentUpon>
     </Compile>
     <Compile Include="View\KhachHang\DatMuaVacxin.cs">
       <SubType>Form</SubType>
