@@ -46,8 +46,8 @@ namespace DA_PTTKHTTT.View.BacSy
 
         private string RowSelect(object sender, EventArgs e)
         {
-            String maNV = dataGridView1.SelectedRows[0].Cells[0].ToString();
-            return maNV;
+            String maHS = dataGridView1.SelectedRows[0].Cells[0].ToString();
+            return maHS;
         }
 
         /*private void GridThongTin_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -63,9 +63,9 @@ namespace DA_PTTKHTTT.View.BacSy
 
         private void btnKhamSangLoc_Click(object sender, EventArgs e)
         {
-            string maNV;
-            maNV = RowSelect(sender, e);
-            KhamSangLoc form = new KhamSangLoc(maNV);
+            string maHS;
+            maHS = RowSelect(sender, e);
+            KhamSangLoc form = new KhamSangLoc(maHS);
             form.ShowDialog();
         }
 
