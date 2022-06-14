@@ -38,5 +38,11 @@ namespace DA_PTTKHTTT.View.KhachHang
             LichSuTiemChung form = new LichSuTiemChung();
             form.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ThanhToan f_tt = new ThanhToan();
+            f_tt.Show();
+        }
     }
 }

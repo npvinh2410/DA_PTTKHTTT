@@ -81,7 +81,9 @@
   <ItemGroup>
     <Compile Include="DAO\Connection\DBConnection.cs" />
     <Compile Include="DAO\Connection\DBOracleUtils.cs" />
+    <Compile Include="DAO\CTHoaDonDAO.cs" />
     <Compile Include="DAO\CTPhieuDatHangDAO.cs" />
+    <Compile Include="DAO\HoaDonDAO.cs" />
     <Compile Include="DAO\HoSoTiemChungDAO.cs" />
     <Compile Include="DAO\LichSuTiemChungDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
@@ -95,8 +97,10 @@
     <Compile Include="DAO\PhieuDatMuaDAO.cs" />
     <Compile Include="DAO\Thongtin_dk_lichlamviecDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DTO\CTHoaDonDTO.cs" />
     <Compile Include="DTO\CTHoSoDTO.cs" />
     <Compile Include="DTO\GoiTiemDTO.cs" />
+    <Compile Include="DTO\HoaDonDTO.cs" />
     <Compile Include="DTO\HoSoTiemChungDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\VacXinDTO.cs" />
@@ -111,6 +115,7 @@
     <Compile Include="Service\DatMuaVCService.cs" />
     <Compile Include="Service\GuiPDHService.cs" />
     <Compile Include="Service\DuyetPDMService.cs" />
+    <Compile Include="Service\HoaDonService.cs" />
     <Compile Include="Service\HoSoTiemChungService.cs" />
     <Compile Include="Service\LichSuTiemChungService.cs" />
     <Compile Include="Service\NhanVienService .cs" />
@@ -144,6 +149,12 @@
     <Compile Include="View\KhachHang\DatMuaVacxin.designer.cs">
       <DependentUpon>DatMuaVacxin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\KhachHang\HOADON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\HOADON.Designer.cs">
+      <DependentUpon>HOADON.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\KhachHang\KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +172,12 @@
     </Compile>
     <Compile Include="View\KhachHang\LichSuTiemChung.Designer.cs">
       <DependentUpon>LichSuTiemChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
@@ -248,6 +265,9 @@
     <EmbeddedResource Include="View\KhachHang\DatMuaVacxin.resx">
       <DependentUpon>DatMuaVacxin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\HOADON.resx">
+      <DependentUpon>HOADON.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\KhachHang\KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\KhachHang\LichSuTiemChung.resx">
       <DependentUpon>LichSuTiemChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
