@@ -21,16 +21,14 @@ namespace DA_PTTKHTTT.View.BacSy
 
         private void xemHoSoKhachHang(string MaHS)
         {
-            DataTable dataTable = HoSoTiemChungService.docDanhSachKhachHangTiem(MaHS);
+            DataTable dataTable = HoSoKhamBenhService.docThongTinTiemChung(MaHS);
             dataGridView1.DataSource = dataTable;
             dataGridView1.AllowUserToAddRows = false;
-
-            dataGridView1.DataSource = null;
         }
 
         private void btnChoTiem_Click(object sender, EventArgs e)
         {
-            String maHS = dataGridView1.SelectedRows[0].Cells[0].ToString();
+            String maHS = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             string chidinhtiem = "CO";
             MessageBox.Show("Cho phép khách hàng tiêm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ChiDinhTiemChungService.chidinhChoTiem(maHS, chidinhtiem);
@@ -40,7 +38,7 @@ namespace DA_PTTKHTTT.View.BacSy
 
         private void btnKhongChoTiem_Click(object sender, EventArgs e)
         {
-            String maHS = dataGridView1.SelectedRows[0].Cells[0].ToString();
+            String maHS = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             string chidinhtiem = "KHONG";
             ChiDinhTiemChungService.chidinhKhongChoTiem(maHS, chidinhtiem);
             MessageBox.Show("Không cho phép khách hàng tiêm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -50,16 +48,16 @@ namespace DA_PTTKHTTT.View.BacSy
 
         private void btnNhapKham_Click(object sender, EventArgs e)
         {
-            string nhietdo = txtNhietDo.Text;
-            string huyetap = txtHuyetAp.Text;
-            String maHS = dataGridView1.SelectedRows[0].Cells[0].ToString();
+            string nhietdo = txtNhietDo.Text.ToUpper();
+            string huyetap = txtHuyetAp.Text.ToUpper();
+            String maHS = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
-            String tiensuBenhnen = (comboBox1.SelectedItem as dynamic).Value;
-            
+            String cotiensuBenhnen = (comboBox1.SelectedItem as dynamic).ToString();
 
-            HoSoKhamBenhService.capnhatThongTinTiemChung(maHS, nhietdo, huyetap, tiensuBenhnen);
+            HoSoKhamBenhService.capnhatThongTinTiemChung(maHS, nhietdo, huyetap, cotiensuBenhnen);
+            DataTable dataTable = HoSoKhamBenhService.docThongTinTiemChung(maHS);
+            dataGridView1.DataSource = dataTable;
             MessageBox.Show("Bạn đã nhập thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            xemHoSoKhachHang(maHS);
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)

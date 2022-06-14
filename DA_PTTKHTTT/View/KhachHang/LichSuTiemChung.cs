@@ -23,7 +23,6 @@ namespace DA_PTTKHTTT.View.KhachHang
         {
             DataTable dataTable = LichSuTiemChungService.docDSLichSuTC();
             dataGridLichSuTiemChung.DataSource = dataTable;
-            dataGridLichSuTiemChung.AllowUserToAddRows = false;
         }
     }
 }

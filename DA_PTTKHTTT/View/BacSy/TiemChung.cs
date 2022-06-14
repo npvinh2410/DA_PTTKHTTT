@@ -25,8 +25,6 @@ namespace DA_PTTKHTTT.View.BacSy
             DataTable dataTable = HoSoTiemChungService.docDanhSachKhachHangTiem(MaKH);
             dataGridView1.DataSource = dataTable;
             dataGridView1.AllowUserToAddRows = false;
-
-            dataGridView1.DataSource = null;
         }
 
         private void btnTimKiemTiemChung_Click(object sender, EventArgs e)
@@ -44,12 +42,6 @@ namespace DA_PTTKHTTT.View.BacSy
             }
         }
 
-        private string RowSelect(object sender, EventArgs e)
-        {
-            String maHS = dataGridView1.SelectedRows[0].Cells[0].ToString();
-            return maHS;
-        }
-
         /*private void GridThongTin_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             String maLich = (comboBoxThoiGian.SelectedItem as dynamic).Value;
@@ -64,7 +56,7 @@ namespace DA_PTTKHTTT.View.BacSy
         private void btnKhamSangLoc_Click(object sender, EventArgs e)
         {
             string maHS;
-            maHS = RowSelect(sender, e);
+            maHS = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             KhamSangLoc form = new KhamSangLoc(maHS);
             form.ShowDialog();
         }

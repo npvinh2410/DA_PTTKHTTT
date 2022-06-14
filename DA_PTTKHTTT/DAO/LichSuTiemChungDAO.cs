@@ -19,8 +19,8 @@ namespace DA_PTTKHTTT.DAO
                 conn.Open();
 
                 string query = "select KH.TENKH, HS.NGAYLAP, VC.TENVC"
-                + "from HOSOTIEMCHUNG HS, CT_HOSO CTHS, KHACHHANG KH, VACXIN VC"
-                + "where HS.MAHS = CTHS.MAHS AND HS.MAKH = KH.MAKH AND CTHS.MAVC = VC.MAVC AND CTHS.CHIDINHTIEM = 'CO' AND HS.MAKH = '" + LoginInfo.USERNAME + "'";
+                + "\nfrom DBA_TEST.HOSOTIEMCHUNG HS, DBA_TEST.CT_HOSO CTHS, DBA_TEST.KHACHHANG KH, DBA_TEST.VACXIN VC"
+                + "\nwhere HS.MAHS = CTHS.MAHS AND HS.MAKH = KH.MAKH AND CTHS.MAVC = VC.MAVC AND CTHS.CHIDINHTIEM LIKE 'CO' AND HS.MAKH = '" + LoginInfo.USERNAME + "'";
 
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dataTable = new DataTable();

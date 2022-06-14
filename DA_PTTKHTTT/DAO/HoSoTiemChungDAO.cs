@@ -11,7 +11,7 @@ namespace DA_PTTKHTTT.DAO
 {
     class HoSoTiemChungDAO
     {
-        public static DataTable xemHoSoKhachHang(String MaKhachHang)
+        public static DataTable xemHoSoKhamBenh(String MaKhachHang)
         {
             OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
             try
@@ -19,8 +19,10 @@ namespace DA_PTTKHTTT.DAO
                 conn.Open();
 
                 string query = "select HS.MAHS, KH.TENKH, HS.NGAYLAP, CTHS.CHIDINHTIEM"
-                                + "\nfrom HOSOTIEMCHUNG HS, KHACHHANG KH, CT_HOSO CTHS"
+                                + "\nfrom DBA_TEST.HOSOTIEMCHUNG HS, DBA_TEST.KHACHHANG KH, DBA_TEST.CT_HOSO CTHS"
                                 + "\nwhere HS.MAKH = KH.MAKH and HS.MAHS=CTHS.MAHS and HS.MAKH = '" + MaKhachHang + "'";
+
+                /*string query = "select * from DBA_TEST.HOSOTIEMCHUNG where MAKH = 'KH001'";*/
 
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dataTable = new DataTable();
@@ -39,7 +41,7 @@ namespace DA_PTTKHTTT.DAO
             }
         }
 
-        public static DataTable xemHoSoKhamBenh(String MaHS)
+        public static DataTable xemHoSoKhachHang(String MaHS)
         {
             OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
             try
@@ -47,8 +49,8 @@ namespace DA_PTTKHTTT.DAO
                 conn.Open();
 
                 string query = "select HS.MAHS, KH.TENKH, HS.NHIETDO, HS.HUYETAP, HS.COTIENSUBENHNEN, HS.NGAYLAP"
-                                + "\nfrom HOSOTIEMCHUNG HS, KHACHHANG KH"
-                                + "\nwhere HS.MAKH = KH.MAKH and HS.MAKH = '" + MaHS + "'";
+                                + "\nfrom DBA_TEST.HOSOTIEMCHUNG HS, DBA_TEST.KHACHHANG KH"
+                                + "\nwhere HS.MAKH = KH.MAKH and HS.MAHS = '" + MaHS + "'";
 
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dataTable = new DataTable();
@@ -73,9 +75,9 @@ namespace DA_PTTKHTTT.DAO
             try
             {
                 conn.Open();
-                string query = "update HOSOTIEMCHUNG HS, KHACHHANG KH "
-                                + "\nset HS.NHIETDO = "+ NhietDo + ", HS.HUYETAP = " + HuyetAp + ", HS.COTIENSUBENHNEN = " + cotiensuBenhNen + ""
-                                + "\nwhere HS.MAKH = KH.MAKH and HS.MAKH = '" + MaHS + "'";
+                string query = "update DBA_TEST.HOSOTIEMCHUNG "
+                                + "\nset NHIETDO = '"+ NhietDo + "', HUYETAP = '" + HuyetAp + "', COTIENSUBENHNEN = '" + cotiensuBenhNen + "'"
+                                + "\nwhere MAHS = '" + MaHS + "'";
 
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dataTable = new DataTable();
@@ -100,7 +102,7 @@ namespace DA_PTTKHTTT.DAO
             try
             {
                 conn.Open();
-                string query = "update CT_HOSO CTHS"
+                string query = "update DBA_TEST.CT_HOSO CTHS"
                                 + "\nset HS.CHIDINHTIEM = " + chidinhtiem + ""
                                 + "\nwhere CTHS.MAHS = '" + MaHS + "'";
 
@@ -127,7 +129,7 @@ namespace DA_PTTKHTTT.DAO
             try
             {
                 conn.Open();
-                string query = "update CT_HOSO CTHS"
+                string query = "update DBA_TEST.CT_HOSO CTHS"
                                 + "\nset HS.CHIDINHTIEM = " + chidinhtiem + ""
                                 + "\nwhere CTHS.MAHS = '" + MaHS + "'";
 
