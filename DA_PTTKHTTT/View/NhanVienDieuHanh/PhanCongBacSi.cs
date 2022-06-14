@@ -89,5 +89,10 @@ namespace DA_PTTKHTTT
             }
 
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

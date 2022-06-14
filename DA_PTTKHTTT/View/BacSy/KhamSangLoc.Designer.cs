@@ -38,6 +38,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnChoTiem = new System.Windows.Forms.Button();
             this.btnKhongChoTiem = new System.Windows.Forms.Button();
+            this.btnNhapKham = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,6 +109,9 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Có",
+            "Không"});
             this.comboBox1.Location = new System.Drawing.Point(366, 219);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(105, 24);
@@ -117,7 +121,7 @@
             // btnChoTiem
             // 
             this.btnChoTiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChoTiem.Location = new System.Drawing.Point(91, 329);
+            this.btnChoTiem.Location = new System.Drawing.Point(91, 358);
             this.btnChoTiem.Name = "btnChoTiem";
             this.btnChoTiem.Size = new System.Drawing.Size(255, 52);
             this.btnChoTiem.TabIndex = 8;
@@ -128,12 +132,25 @@
             // btnKhongChoTiem
             // 
             this.btnKhongChoTiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhongChoTiem.Location = new System.Drawing.Point(452, 329);
+            this.btnKhongChoTiem.Location = new System.Drawing.Point(452, 358);
             this.btnKhongChoTiem.Name = "btnKhongChoTiem";
             this.btnKhongChoTiem.Size = new System.Drawing.Size(255, 52);
             this.btnKhongChoTiem.TabIndex = 9;
             this.btnKhongChoTiem.Text = "KHÔNG cho phép TIÊM";
             this.btnKhongChoTiem.UseVisualStyleBackColor = true;
+            this.btnKhongChoTiem.Click += new System.EventHandler(this.btnKhongChoTiem_Click);
+            // 
+            // btnNhapKham
+            // 
+            this.btnNhapKham.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapKham.ForeColor = System.Drawing.Color.Red;
+            this.btnNhapKham.Location = new System.Drawing.Point(255, 281);
+            this.btnNhapKham.Name = "btnNhapKham";
+            this.btnNhapKham.Size = new System.Drawing.Size(267, 44);
+            this.btnNhapKham.TabIndex = 10;
+            this.btnNhapKham.Text = "Nhập";
+            this.btnNhapKham.UseVisualStyleBackColor = true;
+            this.btnNhapKham.Click += new System.EventHandler(this.btnNhapKham_Click);
             // 
             // KhamSangLoc
             // 
@@ -141,6 +158,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnNhapKham);
             this.Controls.Add(this.btnKhongChoTiem);
             this.Controls.Add(this.btnChoTiem);
             this.Controls.Add(this.comboBox1);
@@ -171,5 +189,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnChoTiem;
         private System.Windows.Forms.Button btnKhongChoTiem;
+        private System.Windows.Forms.Button btnNhapKham;
     }
 }

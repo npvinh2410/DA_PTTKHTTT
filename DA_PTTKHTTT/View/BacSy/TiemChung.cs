@@ -22,7 +22,7 @@ namespace DA_PTTKHTTT.View.BacSy
 
         private void xemHoSoKhachHang(string MaKH)
         {
-            DataTable dataTable = HoSoTiemChungService.docDanhSachKhachHangTiem();
+            DataTable dataTable = HoSoTiemChungService.docDanhSachKhachHangTiem(MaKH);
             dataGridView1.DataSource = dataTable;
             dataGridView1.AllowUserToAddRows = false;
 
@@ -44,9 +44,28 @@ namespace DA_PTTKHTTT.View.BacSy
             }
         }
 
+        private string RowSelect(object sender, EventArgs e)
+        {
+            String maNV = dataGridView1.SelectedRows[0].Cells[0].ToString();
+            return maNV;
+        }
+
+        /*private void GridThongTin_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            String maLich = (comboBoxThoiGian.SelectedItem as dynamic).Value;
+            String maNV = GridThongTin.SelectedRows[0].Cells[0].Value.ToString();
+            DataTable dataTable = Thongtin_dk_lichlamviecService.docLichDangKyNhanVien(maLich, maNV);
+            GridLichDangKy.DataSource = dataTable;
+
+            GridLichLamViec.DataSource = Lichlamviec_nvService.docLichLamViecNV(maLich, maNV);
+        }*/
+
+
         private void btnKhamSangLoc_Click(object sender, EventArgs e)
         {
-            KhamSangLoc form = new KhamSangLoc();
+            string maNV;
+            maNV = RowSelect(sender, e);
+            KhamSangLoc form = new KhamSangLoc(maNV);
             form.ShowDialog();
         }
 

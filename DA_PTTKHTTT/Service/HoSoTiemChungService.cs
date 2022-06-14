@@ -10,6 +10,9 @@ namespace DA_PTTKHTTT.Service
 {
     internal class HoSoTiemChungService
     {
-        public static DataTable docDanhSachKhachHangTiem() => HoSoTiemChungDAO.xemHoSoKhachHang();
+        public static DataTable docDanhSachKhachHangTiem(string maKH)
+        {
+            return HoSoTiemChungDAO.xemHoSoKhachHang(maKH);
+        }
     }
 }

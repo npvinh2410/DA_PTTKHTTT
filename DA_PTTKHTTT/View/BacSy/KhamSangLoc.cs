@@ -11,28 +11,17 @@ using System.Windows.Forms;
 
 namespace DA_PTTKHTTT.View.BacSy
 {
-    /*List<BenhNen> listItem;*/
     public partial class KhamSangLoc : Form
     {
-        public KhamSangLoc()
+        public KhamSangLoc(string MaKH)
         {
             InitializeComponent();
-
-            /*listItem = new List<BenhNen>()
-            {
-                new BenhNen(){Status = "Có"},
-                new BenhNen(){Status = "Không"}
-            };
-            comboBox1.DataSource = listItem;*/
-            comboBox1.DisplayMember = "Name";
-
-            string MaKH = null;
             xemHoSoKhachHang(MaKH);
         }
 
         private void xemHoSoKhachHang(string MaKH)
         {
-            DataTable dataTable = HoSoTiemChungService.docDanhSachKhachHangTiem();
+            DataTable dataTable = HoSoTiemChungService.docDanhSachKhachHangTiem(MaKH);
             dataGridView1.DataSource = dataTable;
             dataGridView1.AllowUserToAddRows = false;
 
@@ -44,10 +33,19 @@ namespace DA_PTTKHTTT.View.BacSy
 
         }
 
-    }
+        private void btnKhongChoTiem_Click(object sender, EventArgs e)
+        {
 
-    public class BenhNen
-    {
-        public string Status { get; set; }
+        }
+
+        private void btnNhapKham_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

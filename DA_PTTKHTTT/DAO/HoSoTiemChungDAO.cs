@@ -38,11 +38,6 @@ namespace DA_PTTKHTTT.DAO
                 conn.Close();
             }
         }
-
-        internal static DataTable xemHoSoKhachHang()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 
