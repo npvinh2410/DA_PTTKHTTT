@@ -17,6 +17,20 @@ namespace DA_PTTKHTTT.DTO
         private String moiQuanHe;
         private String sdtNguoiThan;
 
+        public static KhachHangDTO KhoiTaoKH(string maKH, string tenKH, string sdt, string gioiTinh, string diaChi, string nguoiThan, string moiQuanHe, string sdtNguoiThan)
+        {
+            KhachHangDTO kh = new KhachHangDTO();
+            kh.maKH = maKH;
+            kh.tenKH = tenKH;
+            kh.sdt = sdt;
+            kh.gioiTinh = gioiTinh;
+            kh.diaChi = diaChi;
+            kh.nguoiThan = nguoiThan;
+            kh.moiQuanHe = moiQuanHe;
+            kh.sdtNguoiThan = sdtNguoiThan;
+            return kh;
+        }
+
         public string MaKH { get => maKH; set => maKH = value; }
         public string TenKH { get => tenKH; set => tenKH = value; }
         public string Sdt { get => sdt; set => sdt = value; }
