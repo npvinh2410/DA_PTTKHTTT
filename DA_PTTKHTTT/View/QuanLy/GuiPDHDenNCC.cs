@@ -22,16 +22,14 @@ namespace DA_PTTKHTTT.View.QuanLy
         }
         private void hienThiDSCTDatHang()
         {
-            DataTable dataTable = GuiPDHService.docDanhSachCTPhieuDatHang();
-            /*dataTable.Columns.Remove("TINHTRANG");
-            dataTable.Columns.Remove("MANV");*/
+            DataTable dataTable = PhieuDatHangService.docDanhSachCTPhieuDatHangChoDat();
             gridCTPDH.DataSource = dataTable;
             gridCTPDH.AllowUserToAddRows = false;
         }
 
         private void hienThiSLCTDatHang()
         {
-            int amountVC = GuiPDHService.docSoLuongVCDH();
+            int amountVC = PhieuDatHangService.docSoLuongVCDH();
 
             txtAmountVC.Text = amountVC.ToString();
         }
@@ -52,7 +50,7 @@ namespace DA_PTTKHTTT.View.QuanLy
 
             if(soLuong > 0)
             {
-                if (!GuiPDHService.GuiPDH())
+                if (!PhieuDatHangService.GuiPDH())
                 {
                     MessageBox.Show("Gửi không thành công!");
                 }
@@ -62,9 +60,13 @@ namespace DA_PTTKHTTT.View.QuanLy
                     txtAmountVC.Text = "0";
                 }
             }
-            else
+            else if(soLuong == 0)
             {
                 MessageBox.Show("Phiếu trống, không thể gửi!");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi hệ thống!");
             }
         }
     }

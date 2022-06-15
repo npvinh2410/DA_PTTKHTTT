@@ -10,8 +10,8 @@ namespace DA_PTTKHTTT.DTO
     {
         private String maKH;
         private String tenKH;
-        private string sdt;
-        private string gioiTinh;
+        private String sdt;
+        private String gioiTinh;
         private String diaChi;
         private String nguoiThan;
         private String moiQuanHe;

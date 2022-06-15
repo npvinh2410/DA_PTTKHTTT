@@ -255,15 +255,9 @@ namespace DA_PTTKHTTT.View.KhachHang
                 string hotennt = tb_hotennguoithan.Text;
                 string sdtnguoithan = tb_sdtnguoithan.Text;
                 string moiqh = tb_moiquanhe.Text;
-                bool checkgioitinh = ckb_nam.CheckState == CheckState.Checked ? true : false;
-                if (checkgioitinh == true)
-                {
-                    kh = KhachHangDTO.KhoiTaoKH(makh, tenkh, sdtkh, "NAM", diachi, hotennt, moiqh, sdtnguoithan);
-                }
-                else
-                {
-                    kh = KhachHangDTO.KhoiTaoKH(makh, tenkh, sdtkh, "NU", diachi, hotennt, moiqh, sdtnguoithan);
-                }
+                string gioitinh = ckb_nam.CheckState == CheckState.Checked ? "Nam" : "Nữ";
+
+                kh = KhachHangService.khoiTaoKH(tenkh, sdtkh, diachi, gioitinh);
             }
 
             bool checkgt = ckb_tiemtheogoi.CheckState == CheckState.Checked ? true : false;

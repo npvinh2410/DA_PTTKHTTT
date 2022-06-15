@@ -63,7 +63,7 @@ namespace DA_PTTKHTTT.DAO
                     maPD = "PD1";
                 }
 
-                string query = "insert into DBA_PTTK.PhieuDatMua values('" + maPD+"', "+ "TO_DATE('" + DateTime.Now.ToString("yyyy/MM/dd") + "', 'yyyy/mm/dd'), '"+maKH+"', null, 'Chờ duyệt', 0)";
+                string query = "insert into DBA_PTTK.PhieuDatMua values('" + maPD+"', "+ "TO_DATE('" + DateTime.Now.ToString("yyyy/MM/dd") + "', 'yyyy/mm/dd'), '"+maKH+"', 'Chờ duyệt', 0)";
 
                 OracleCommand command = conn.CreateCommand();
                 command.CommandType = CommandType.Text;

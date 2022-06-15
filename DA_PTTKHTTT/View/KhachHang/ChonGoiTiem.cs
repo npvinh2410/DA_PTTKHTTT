@@ -44,14 +44,14 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         private void docDSGoiTiem()
         {
-            DataTable dataTable = DatMuaVCService.docGoiTiem();
+            DataTable dataTable = GoiTiemService.docGoiTiem();
             grid_dsgoitiem.DataSource = dataTable;
             grid_dsgoitiem.AllowUserToAddRows = false;
         }
 
         private void docDSVC()
         {
-            DataTable dataTable = DatMuaVCService.docDanhSachVC();
+            DataTable dataTable = VacXinService.docDanhSachVC();
             grid_dsgoitiem.DataSource = dataTable;
             dataTable.Columns.Remove("SOLUONGTON");
             grid_dsgoitiem.AllowUserToAddRows = false;

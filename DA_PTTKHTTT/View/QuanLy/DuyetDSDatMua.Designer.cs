@@ -59,7 +59,6 @@
             this.gridDuyetCTPDM.AllowUserToAddRows = false;
             this.gridDuyetCTPDM.BackgroundColor = System.Drawing.SystemColors.Window;
             this.gridDuyetCTPDM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDuyetCTPDM.ColumnHeadersVisible = false;
             this.gridDuyetCTPDM.Location = new System.Drawing.Point(350, 112);
             this.gridDuyetCTPDM.Name = "gridDuyetCTPDM";
             this.gridDuyetCTPDM.ReadOnly = true;

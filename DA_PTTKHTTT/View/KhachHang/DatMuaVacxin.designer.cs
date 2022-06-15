@@ -66,7 +66,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtBuy = new System.Windows.Forms.Button();
+            this.btnBuy = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnXemLS = new System.Windows.Forms.Button();
@@ -107,7 +107,7 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(792, 422);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Danh sách vắc xin";
+            this.tabPage3.Text = "Tra cứu vắc xin";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
@@ -198,7 +198,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(792, 422);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Danh sách đặt mua";
+            this.tabPage1.Text = "Đặt mua vắc xin";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
@@ -225,7 +225,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.tabControl2);
-            this.panel1.Controls.Add(this.txtBuy);
+            this.panel1.Controls.Add(this.btnBuy);
             this.panel1.Location = new System.Drawing.Point(52, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(696, 380);
@@ -549,21 +549,21 @@
             this.label13.Text = "Tên khách hàng";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // txtBuy
+            // btnBuy
             // 
-            this.txtBuy.BackColor = System.Drawing.Color.OliveDrab;
-            this.txtBuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.txtBuy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtBuy.Location = new System.Drawing.Point(535, 327);
-            this.txtBuy.Name = "txtBuy";
-            this.txtBuy.Size = new System.Drawing.Size(142, 36);
-            this.txtBuy.TabIndex = 11;
-            this.txtBuy.Text = "Đặt mua";
-            this.txtBuy.UseVisualStyleBackColor = false;
-            this.txtBuy.Click += new System.EventHandler(this.txtBuy_Click);
+            this.btnBuy.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnBuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBuy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBuy.Location = new System.Drawing.Point(535, 327);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(142, 36);
+            this.btnBuy.TabIndex = 11;
+            this.btnBuy.Text = "Đặt mua";
+            this.btnBuy.UseVisualStyleBackColor = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // tabControl1
             // 
@@ -655,6 +655,7 @@
             this.gridLSCTDM.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridLSCTDM.Size = new System.Drawing.Size(328, 242);
             this.gridLSCTDM.TabIndex = 22;
+            this.gridLSCTDM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLSCTDM_CellContentClick);
             // 
             // gridLSDSDM
             // 
@@ -728,7 +729,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button txtBuy;
+        private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.TextBox txtIDCustomer;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label8;

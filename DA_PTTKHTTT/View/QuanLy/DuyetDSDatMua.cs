@@ -25,7 +25,6 @@ namespace DA_PTTKHTTT.View.QuanLy
         {
             DataTable dataTable = PhieuDatMuaService.docDanhSachPhieuDatMuaChoDuyet();
             dataTable.Columns.Remove("TINHTRANG");
-            dataTable.Columns.Remove("MANV");
             gridDuyetPDM.DataSource = dataTable;
             gridDuyetPDM.AllowUserToAddRows = false;
 
@@ -56,7 +55,7 @@ namespace DA_PTTKHTTT.View.QuanLy
         {
             List<string> dsMaPD = docDSPhieuDuocChon();
 
-            if (!DuyetPDMService.DuyetPDM(dsMaPD, 1))
+            if (!PhieuDatMuaService.DuyetPDM(dsMaPD, 1))   // 1: Trạng thái được duyệt
             {
                 MessageBox.Show("Duyệt không thành công");
             }
@@ -82,7 +81,7 @@ namespace DA_PTTKHTTT.View.QuanLy
         {
             List<string> dsMaPD = docDSPhieuDuocChon();
 
-            if (!DuyetPDMService.DuyetPDM(dsMaPD, 0))
+            if (!PhieuDatMuaService.DuyetPDM(dsMaPD, 0))   // 0: trạng thái không được duyệt
             {
                 MessageBox.Show("không thành công");
             }

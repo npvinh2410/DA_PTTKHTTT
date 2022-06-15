@@ -119,9 +119,9 @@
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\Thongtin_dk_lichlamviecDTO.cs" />
     <Compile Include="Service\ChiDinhTiemChungService.cs" />
-    <Compile Include="Service\DatMuaVCService.cs" />
-    <Compile Include="Service\GuiPDHService.cs" />
-    <Compile Include="Service\DuyetPDMService.cs" />
+    <Compile Include="Service\GoiTiemService.cs" />
+    <Compile Include="Service\VacXinService .cs" />
+    <Compile Include="Service\KhachHangService.cs" />
     <Compile Include="Service\HoaDonService.cs" />
     <Compile Include="Service\HoSoKhamBenhService.cs" />
     <Compile Include="Service\HoSoTiemChungService.cs" />

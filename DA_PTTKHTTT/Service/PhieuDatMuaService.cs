@@ -21,5 +21,34 @@ namespace DA_PTTKHTTT.Service
         {
             return CTPhieuDatMuaDAO.docCTPhieuDatMua(maPD);
         }
+
+        public static bool DuyetPDM(List<string> dsMaPD, int trangThai)
+        {
+            List<CTPhieuDatMuaDTO> CTPhieuDatMuas = new List<CTPhieuDatMuaDTO>();
+            PhieuDatMuaDAO.capNhatTrangThaiDuyet(dsMaPD, trangThai);
+
+            if (trangThai == 0)
+            {
+                return true;
+            }
+
+            string maDH = PhieuDatHangDAO.docIDChoDatPhieuDatHang();
+            CTPhieuDatMuas = CTPhieuDatMuaDAO.docCTPhieuDatMuaDuocDuyet(dsMaPD);
+
+            for (int i = 0; i < CTPhieuDatMuas.Count; i++)
+            {
+                string maVC = CTPhieuDatMuas[i].MaVC;
+                int soLuong = CTPhieuDatMuas[i].SoLuong;
+
+                CTPhieuDatHangDAO.themCTPhieuDatHang(maDH, maVC, soLuong);
+            }
+
+            return true;
+        }
+
+        public static DataTable docDSDatMuaKH(string maKH)
+        {
+            return PhieuDatMuaDAO.docDSPhieuDatMuaKH(maKH);
+        }
     }
 }

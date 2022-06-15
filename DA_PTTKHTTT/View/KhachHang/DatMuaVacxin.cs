@@ -24,14 +24,14 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         private void docDSGoiTiem()
         {
-            DataTable dataTable = DatMuaVCService.docGoiTiem();
+            DataTable dataTable = GoiTiemService.docGoiTiem();
             gridDatMuaGoi.DataSource = dataTable;
             gridDatMuaGoi.AllowUserToAddRows = false;
         }
 
         private void docCTGoiTiem(string maGT)
         {
-            DataTable dataTable = DatMuaVCService.docCTGoiTiem(maGT);
+            DataTable dataTable = GoiTiemService.docCTGoiTiem(maGT);
             gridTraCuuVC.DataSource = dataTable;
             dataTable.Columns.Remove("SOLUONGTON");
             dataTable.Columns.Remove("DONGIA");
@@ -40,7 +40,7 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         private void docDSVC()
         {
-            DataTable dataTable = DatMuaVCService.docDanhSachVC();
+            DataTable dataTable = VacXinService.docDanhSachVC();
             gridDatMuaLe.DataSource = dataTable;
             dataTable.Columns.Remove("SOLUONGTON");
             gridDatMuaLe.AllowUserToAddRows = false;
@@ -48,16 +48,15 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         private void docDSDatMuaKH(string maKH)
         {
-            DataTable dataTable = DatMuaVCService.docDSDatMuaKH(maKH);
+            DataTable dataTable = PhieuDatMuaService.docDSDatMuaKH(maKH);
             gridLSDSDM.DataSource = dataTable;
             dataTable.Columns.Remove("MAKH");
-            dataTable.Columns.Remove("MANV");
             gridLSDSDM.AllowUserToAddRows = false;
         }
 
         private void docCTPhieuDatMua(string maPD)
         {
-            DataTable dataTable = DatMuaVCService.docCTPhieuDatMua(maPD);
+            DataTable dataTable = PhieuDatMuaService.docCTPhieuDatMua(maPD);
             gridLSCTDM.DataSource = dataTable;
             gridLSCTDM.AllowUserToAddRows = false;
         }
@@ -86,14 +85,6 @@ namespace DA_PTTKHTTT.View.KhachHang
             return dsMaVC;
         }
 
-        private bool kiemTraChonMua(int slGoi, int slVC)
-        {
-            if (slGoi == 0 && slVC == 0)
-                return false;
-
-            return true;
-        }
-
         private bool kiemTraKHThanhVien()
         {
             string maKH = txtIDCustomer.Text;
@@ -104,7 +95,7 @@ namespace DA_PTTKHTTT.View.KhachHang
                 return false;
             }
 
-            KhachHangDTO kh = DatMuaVCService.docThongTinKH(maKH);
+            KhachHangDTO kh = KhachHangService.docThongTinKH(maKH);
 
             if (kh == null)
             {
@@ -190,7 +181,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             int index = tabControl1.SelectedIndex;
             if(index == 1)
             {
-                DataTable dataTable = DatMuaVCService.docGoiTiem();
+                DataTable dataTable = GoiTiemService.docGoiTiem();
                 gridTraCuuGoi.DataSource = dataTable;
                 dataTable.Columns.Remove("THANHTIEN");
                 gridTraCuuGoi.AllowUserToAddRows = false;
@@ -259,7 +250,7 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         }
 
-        private void txtBuy_Click(object sender, EventArgs e)
+        private void btnBuy_Click(object sender, EventArgs e)
         {
             // Loại KH
             int loaiKH = tabControl2.SelectedIndex;
@@ -278,7 +269,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             List<string> dsMaGoi = docDSGoiDuocChon();
             List<string> dsMaVC = docDSVCDuocChon();
 
-            if (!kiemTraChonMua(dsMaGoi.Count, dsMaVC.Count))
+            if (dsMaGoi.Count == 0 && dsMaVC.Count == 0)
             {
                 MessageBox.Show("Cần chọn vắc xin!");
                 return;
@@ -300,10 +291,10 @@ namespace DA_PTTKHTTT.View.KhachHang
                 string diaChi = txtAddress.Text;
                 string gioiTinh = radioGenderMale.Checked ? "Nam" : "Nữ";
 
-                kh = DatMuaVCService.khoiTao(tenKH, sdt, diaChi, gioiTinh);
+                kh = KhachHangService.khoiTaoKH(tenKH, sdt, diaChi, gioiTinh);
             }
 
-            maKH = DatMuaVCService.datMuaVC(maKH, kh, dsMaGoi, dsMaVC);
+            maKH = VacXinService.datMuaVC(maKH, kh, dsMaGoi, dsMaVC);
 
             if (maKH==null)
             {
@@ -482,7 +473,7 @@ namespace DA_PTTKHTTT.View.KhachHang
         {
             if (radioBtnTatCaVC.Checked)
             {
-                DataTable dataTable = DatMuaVCService.docDanhSachVC();
+                DataTable dataTable = VacXinService.docDanhSachVC();
                 gridTraCuuVC.DataSource = dataTable;
                 dataTable.Columns.Remove("SOLUONGTON");
                 dataTable.Columns.Remove("DONGIA");
@@ -497,6 +488,11 @@ namespace DA_PTTKHTTT.View.KhachHang
             string maGT = gridTraCuuGoi.SelectedRows[0].Cells[0].Value.ToString();
             docCTGoiTiem(maGT);
             radioBtnTatCaVC.Checked = false;
+        }
+
+        private void gridLSCTDM_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

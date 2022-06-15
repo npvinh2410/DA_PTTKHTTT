@@ -44,7 +44,7 @@ namespace DA_PTTKHTTT.DAO
             {
                 conn.Open();
 
-                string query = "select * from DBA_PTTK.PhieuDatHang where madh = '" + maDH + "'";
+                string query = "select * from DBA_PTTK.CT_DatHang where madh = '" + maDH + "'";
 
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dataTable = new DataTable();
@@ -103,7 +103,10 @@ namespace DA_PTTKHTTT.DAO
                 DataTable dataTable = new DataTable();
                 OracleDataAdapter adapter = new OracleDataAdapter(command);
                 adapter.Fill(dataTable);
-                int soLuong = Int32.Parse(dataTable.Rows[0][0].ToString());
+
+                string result = dataTable.Rows[0][0].ToString();
+
+                int soLuong = result == "" ? 0 : Int32.Parse(result);
 
                 return soLuong;
             }

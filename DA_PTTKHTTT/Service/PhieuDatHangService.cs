@@ -21,5 +21,35 @@ namespace DA_PTTKHTTT.Service
         {
             return CTPhieuDatHangDAO.docCTPhieuDatHang(maDH);
         }
+
+        public static bool GuiPDH()
+        {
+            string maDHCu = PhieuDatHangDAO.docIDChoDatPhieuDatHang();
+            string tienTo = maDHCu.Substring(0, 2);
+            string idCu = maDHCu.Substring(2);
+            string idMoi = (Int32.Parse(maDHCu.Substring(2)) + 1).ToString();
+            string maDHMoi = tienTo + idMoi.PadLeft(idCu.Length - idMoi.Length + 1, '0'); ;
+
+            if (!PhieuDatHangDAO.capNhatPhieuDatHang(maDHCu))
+            {
+                return false;
+            }
+
+            PhieuDatHangDAO.themPhieuDatHang(maDHMoi);
+
+            return true;
+        }
+
+        public static int docSoLuongVCDH()
+        {
+            return PhieuDatHangDAO.docSoLuongVCChoDat();
+        }
+
+        public static DataTable docDanhSachCTPhieuDatHangChoDat()
+        {
+            string maDH = PhieuDatHangDAO.docIDChoDatPhieuDatHang();
+
+            return PhieuDatHangDAO.docCTPhieuDatHang(maDH);
+        }
     }
 }
