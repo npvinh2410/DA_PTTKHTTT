@@ -11,6 +11,31 @@ namespace DA_PTTKHTTT.DAO
 {
     class PhieuDangKyTiemDAO
     {
+        public static DataTable docdsPhieuDangKyTiem(string maKH)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query = "select * from dba_pttk.phieudangkytiem where makh = '" + maKH + "'";
+                OracleCommand command = new OracleCommand(query, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command);
+                adapter.Fill(dataTable);
+
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public static string themPhieuDangKyTiem(string maKH, string loaitiem)
         {
             OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
@@ -34,7 +59,7 @@ namespace DA_PTTKHTTT.DAO
                 }
                 else
                 {
-                    madk = "DK1";
+                    madk = "DK1001";
                 }
 
                 string query = "insert into DBA_PTTK.PHIEUDANGKYTIEM values('" + madk + "', " + "TO_DATE('" + DateTime.Now.ToString("yyyy/MM/dd") + "', 'yyyy/mm/dd'), '" + maKH + "', 'CHUA THANH TOAN', null, '" + loaitiem + "')";

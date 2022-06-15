@@ -244,6 +244,12 @@
     <Compile Include="View\NhanVien\XemLichLamViec.Designer.cs">
       <DependentUpon>XemLichLamViec.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NhanVien\XemThongTinKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhanVien\XemThongTinKhachHang.Designer.cs">
+      <DependentUpon>XemThongTinKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\QuanLy\DuyetDSDatMua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NhanVien\XemLichLamViec.resx">
       <DependentUpon>XemLichLamViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhanVien\XemThongTinKhachHang.resx">
+      <DependentUpon>XemThongTinKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLy\DuyetDSDatMua.resx">
       <DependentUpon>DuyetDSDatMua.cs</DependentUpon>

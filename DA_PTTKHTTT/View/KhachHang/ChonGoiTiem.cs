@@ -123,12 +123,29 @@ namespace DA_PTTKHTTT.View.KhachHang
             }
             else
             {
+                bool kt;
                 string magt = grid_dsgoitiem.SelectedRows[0].Cells[0].Value.ToString();
-                string tengt = grid_dsgoitiem.SelectedRows[0].Cells[1].Value.ToString();
-                string dongia = grid_dsgoitiem.SelectedRows[0].Cells[3].Value.ToString();
-                DateTime ngay = DateTime.Parse(tb_ngaytiem.Value.ToString());
-                string trungtamtiem = cbb_trungtamtiem.Text.ToString();
-                grid_dsgoitiemchon.Rows.Add(magt, tengt, dongia, ngay, trungtamtiem);
+                if (loai==true)
+                {
+                    kt = PhieuDangKyTiemService.docSLGoiTiemton(magt);
+                }    
+                else
+                {
+                    kt = PhieuDangKyTiemService.docSLVacXinton(magt);
+                }
+                if (kt == true)
+                {
+                    string tengt = grid_dsgoitiem.SelectedRows[0].Cells[1].Value.ToString();
+                    string dongia = grid_dsgoitiem.SelectedRows[0].Cells[3].Value.ToString();
+                    DateTime ngay = DateTime.Parse(tb_ngaytiem.Value.ToString());
+                    string trungtamtiem = cbb_trungtamtiem.Text.ToString();
+                    grid_dsgoitiemchon.Rows.Add(magt, tengt, dongia, ngay, trungtamtiem);
+                }
+                else
+                {
+                    MessageBox.Show("Số lượng vắc xin không đủ để đáp ứng. Vui lòng đặt vắc xin thêm!");
+                    return;
+                }
             }
         }
 

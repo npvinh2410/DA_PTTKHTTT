@@ -11,6 +11,25 @@ namespace DA_PTTKHTTT.Service
 {
     class PhieuDangKyTiemService
     {
+        public static DataTable docdsPhieuDangKyTiem(string maKH)
+        {
+            return PhieuDangKyTiemDAO.docdsPhieuDangKyTiem(maKH);
+        }
+
+        public static bool docSLVacXinton(string mavc)
+        {
+            int sl = VacXinDAO.docSLVacXinton(mavc);
+            if (sl > 0) return true;
+            return false;
+        }
+
+        public static bool docSLGoiTiemton(string mavc)
+        {
+            int sl = GoiTiemDAO.docSLGoiTiemton(mavc);
+            if (sl > 0) return true;
+            return false;
+        }
+
         public static KhachHangDTO docThongTinKH(string maKH)
         {
             KhachHangDTO kh = new KhachHangDTO();

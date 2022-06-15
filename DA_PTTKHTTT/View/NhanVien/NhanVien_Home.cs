@@ -21,5 +21,23 @@ namespace DA_PTTKHTTT.View.NhanVien
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            View.NhanVien.XemThongTinKhachHang form = new View.NhanVien.XemThongTinKhachHang();
+            form.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            View.DangKyLichLamViec form = new View.DangKyLichLamViec();
+            form.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            View.XemLichLamViec form = new View.XemLichLamViec();
+            form.ShowDialog();
+        }
     }
 }
