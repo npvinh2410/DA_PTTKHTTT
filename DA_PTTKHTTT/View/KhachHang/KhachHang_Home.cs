@@ -44,5 +44,11 @@ namespace DA_PTTKHTTT.View.KhachHang
             ThanhToan f_tt = new ThanhToan();
             f_tt.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            View.KhachHang.DangKyTiemChung form = new View.KhachHang.DangKyTiemChung();
+            form.ShowDialog();
+        }
     }
 }

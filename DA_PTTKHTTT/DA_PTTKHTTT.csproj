@@ -81,6 +81,8 @@
   <ItemGroup>
     <Compile Include="DAO\Connection\DBConnection.cs" />
     <Compile Include="DAO\Connection\DBOracleUtils.cs" />
+    <Compile Include="DAO\CTDangKyGoiTiemDAO.cs" />
+    <Compile Include="DAO\CTDangKyGoiTiemLeDAO.cs" />
     <Compile Include="DAO\CTHoaDonDAO.cs" />
     <Compile Include="DAO\CTPhieuDatHangDAO.cs" />
     <Compile Include="DAO\HoaDonDAO.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="DAO\CTPhieuDatMuaDAO.cs" />
     <Compile Include="DAO\GoiTiemDAO.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\PhieuDangKyTiemDAO.cs" />
     <Compile Include="DAO\VacXinDAO.cs" />
     <Compile Include="DAO\PhieuDatHangDAO.cs" />
     <Compile Include="DAO\PhieuDatMuaDAO.cs" />
@@ -127,6 +130,7 @@
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\LichLamViecService.cs" />
     <Compile Include="Service\Lichlamviec_nvService.cs" />
+    <Compile Include="Service\PhieuDangKyTiemService.cs" />
     <Compile Include="Service\PhieuDatHangService.cs" />
     <Compile Include="Service\PhieuDatMuaService.cs" />
     <Compile Include="Service\Thongtin_dk_lichlamviecService.cs" />

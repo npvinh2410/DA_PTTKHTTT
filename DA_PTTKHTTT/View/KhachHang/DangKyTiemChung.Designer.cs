@@ -71,6 +71,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             this.btn_chongoitiem.TabIndex = 120;
             this.btn_chongoitiem.Text = "CHỌN GÓI TIÊM";
             this.btn_chongoitiem.UseVisualStyleBackColor = false;
+            this.btn_chongoitiem.Click += new System.EventHandler(this.btn_chongoitiem_Click);
             // 
             // btn_dangky
             // 
@@ -81,6 +82,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             this.btn_dangky.TabIndex = 119;
             this.btn_dangky.Text = "ĐĂNG KÝ";
             this.btn_dangky.UseVisualStyleBackColor = false;
+            this.btn_dangky.Click += new System.EventHandler(this.btn_dangky_Click);
             // 
             // label15
             // 
@@ -122,6 +124,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             this.ckb_goitiemle.TabIndex = 115;
             this.ckb_goitiemle.Text = "Gói tiêm lẻ";
             this.ckb_goitiemle.UseVisualStyleBackColor = true;
+            this.ckb_goitiemle.CheckedChanged += new System.EventHandler(this.ckb_goitiemle_CheckedChanged);
             // 
             // ckb_tiemtheogoi
             // 
@@ -137,6 +140,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             this.ckb_tiemtheogoi.Text = "Tiêm theo gói";
             this.ckb_tiemtheogoi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ckb_tiemtheogoi.UseVisualStyleBackColor = true;
+            this.ckb_tiemtheogoi.CheckedChanged += new System.EventHandler(this.ckb_tiemtheogoi_CheckedChanged);
             // 
             // label1
             // 
@@ -178,6 +182,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             this.btn_tracuu.TabIndex = 110;
             this.btn_tracuu.Text = "TRA CỨU";
             this.btn_tracuu.UseVisualStyleBackColor = false;
+            this.btn_tracuu.Click += new System.EventHandler(this.btn_tracuu_Click);
             // 
             // tb_makh
             // 
@@ -289,6 +294,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             this.ckb_nu.TabIndex = 97;
             this.ckb_nu.Text = "Nữ";
             this.ckb_nu.UseVisualStyleBackColor = true;
+            this.ckb_nu.CheckedChanged += new System.EventHandler(this.ckb_nu_CheckedChanged);
             // 
             // ckb_nam
             // 
@@ -304,6 +310,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             this.ckb_nam.Text = "Nam";
             this.ckb_nam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ckb_nam.UseVisualStyleBackColor = true;
+            this.ckb_nam.CheckedChanged += new System.EventHandler(this.ckb_nam_CheckedChanged);
             // 
             // label3
             // 
@@ -337,6 +344,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             this.ckb_treem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ckb_treem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ckb_treem.UseVisualStyleBackColor = true;
+            this.ckb_treem.CheckedChanged += new System.EventHandler(this.ckb_treem_CheckedChanged);
             // 
             // tb_hotenkh
             // 
