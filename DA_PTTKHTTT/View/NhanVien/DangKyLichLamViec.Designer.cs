@@ -35,8 +35,12 @@ namespace DA_PTTKHTTT.View
             this.dateNgay = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCa = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.labelTrungtam = new System.Windows.Forms.Label();
+            this.labelVaitro = new System.Windows.Forms.Label();
             this.labelTen = new System.Windows.Forms.Label();
             this.labelMa = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,10 +54,6 @@ namespace DA_PTTKHTTT.View
             this.CA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelVaitro = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.labelTrungtam = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridDangKy)).BeginInit();
@@ -98,7 +98,7 @@ namespace DA_PTTKHTTT.View
             this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.button1_Click);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dateNgay
             // 
@@ -129,6 +129,24 @@ namespace DA_PTTKHTTT.View
             this.label4.TabIndex = 1;
             this.label4.Text = "Chọn ca:";
             // 
+            // labelTrungtam
+            // 
+            this.labelTrungtam.AutoSize = true;
+            this.labelTrungtam.Location = new System.Drawing.Point(136, 209);
+            this.labelTrungtam.Name = "labelTrungtam";
+            this.labelTrungtam.Size = new System.Drawing.Size(67, 17);
+            this.labelTrungtam.TabIndex = 1;
+            this.labelTrungtam.Text = "Idonknow";
+            // 
+            // labelVaitro
+            // 
+            this.labelVaitro.AutoSize = true;
+            this.labelVaitro.Location = new System.Drawing.Point(136, 163);
+            this.labelVaitro.Name = "labelVaitro";
+            this.labelVaitro.Size = new System.Drawing.Size(46, 17);
+            this.labelVaitro.TabIndex = 1;
+            this.labelVaitro.Text = "Bác sĩ";
+            // 
             // labelTen
             // 
             this.labelTen.AutoSize = true;
@@ -146,6 +164,24 @@ namespace DA_PTTKHTTT.View
             this.labelMa.Size = new System.Drawing.Size(51, 17);
             this.labelMa.TabIndex = 1;
             this.labelMa.Text = "NV693";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 209);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 17);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Mã trung tâm:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 163);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 17);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Vai trò:";
             // 
             // label6
             // 
@@ -268,42 +304,6 @@ namespace DA_PTTKHTTT.View
             this.label12.Size = new System.Drawing.Size(154, 17);
             this.label12.TabIndex = 8;
             this.label12.Text = "Chọn khoảng thời gian:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 17);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Vai trò:";
-            // 
-            // labelVaitro
-            // 
-            this.labelVaitro.AutoSize = true;
-            this.labelVaitro.Location = new System.Drawing.Point(136, 163);
-            this.labelVaitro.Name = "labelVaitro";
-            this.labelVaitro.Size = new System.Drawing.Size(46, 17);
-            this.labelVaitro.TabIndex = 1;
-            this.labelVaitro.Text = "Bác sĩ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 209);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 17);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Mã trung tâm:";
-            // 
-            // labelTrungtam
-            // 
-            this.labelTrungtam.AutoSize = true;
-            this.labelTrungtam.Location = new System.Drawing.Point(136, 209);
-            this.labelTrungtam.Name = "labelTrungtam";
-            this.labelTrungtam.Size = new System.Drawing.Size(67, 17);
-            this.labelTrungtam.TabIndex = 1;
-            this.labelTrungtam.Text = "Idonknow";
             // 
             // DangKyLichLamViec
             // 

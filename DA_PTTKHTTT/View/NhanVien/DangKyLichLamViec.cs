@@ -45,17 +45,7 @@ namespace DA_PTTKHTTT.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String maLich = (comboBoxThoiGian.SelectedItem as dynamic).Value;
-            DateTime ngay = dateNgay.Value.Date;
-            String ca = comboBoxCa.Text;
-            if(Service.LichLamViecService.kiemTraThoiGianTrongLich(ngay, maLich))
-            {
-                GridDangKy.Rows.Add(ngay.ToString("dd/MM/yyyy"), ca);
-            }
-            else
-            {
-                MessageBox.Show("Thời gian không hợp lệ");
-            }
+
         }
 
         private void btnGui_Click(object sender, EventArgs e)
@@ -97,6 +87,19 @@ namespace DA_PTTKHTTT.View
             return lichs;
         }
 
-
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            String maLich = (comboBoxThoiGian.SelectedItem as dynamic).Value;
+            DateTime ngay = dateNgay.Value.Date;
+            String ca = comboBoxCa.Text;
+            if (Service.LichLamViecService.kiemTraThoiGianTrongLich(ngay, maLich))
+            {
+                GridDangKy.Rows.Add(ngay.ToString("dd/MM/yyyy"), ca);
+            }
+            else
+            {
+                MessageBox.Show("Thời gian không hợp lệ");
+            }
+        }
     }
 }

@@ -45,14 +45,5 @@ namespace DA_PTTKHTTT.Service
             return false;
         }
 
-        public static bool kiemTraTonTaiTrongLichDangKy(DataTable thongTinDangKy, DateTime ngay, String ca)
-        {
-            if (thongTinDangKy == null || thongTinDangKy.Rows.Count == 0) return true;
-            foreach(DataRow row in thongTinDangKy.Rows)
-            {
-                if (DateTime.Parse(row["NGAY"].ToString()) == ngay && row["CA"].ToString() == ca) return false;
-            }
-            return true;
-        }
     }
 }
