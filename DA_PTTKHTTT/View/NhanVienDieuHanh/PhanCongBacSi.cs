@@ -41,14 +41,6 @@ namespace DA_PTTKHTTT
             GridThongTin.DataSource = dataTable;
         }
 
-        private void RowSelect(object sender, EventArgs e)
-        {
-            String maLich = (comboBoxThoiGian.SelectedItem as dynamic).Value;
-            String maNV = GridThongTin.SelectedRows[0].Cells[0].ToString();
-            DataTable dataTable = Thongtin_dk_lichlamviecService.docLichDangKyNhanVien(maLich, maNV);
-            GridLichDangKy.DataSource = dataTable;
-        }
-
         private void GridThongTin_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             String maLich = (comboBoxThoiGian.SelectedItem as dynamic).Value;
