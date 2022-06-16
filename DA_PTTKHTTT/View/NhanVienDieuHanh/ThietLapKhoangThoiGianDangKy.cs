@@ -24,13 +24,18 @@ namespace DA_PTTKHTTT
             DTO.LichLamViecDTO lichLamViec = Service.LichLamViecService.khoiTao(thoiGianTu, thoiGianDen);
             if (Service.LichLamViecService.KiemTraThoiGianHopLe(thoiGianTu, thoiGianDen))
             {
-                Service.LichLamViecService.themLichLamViec(lichLamViec);
-                MessageBox.Show("Thêm thành công");
+                DialogResult dialogResult = MessageBox.Show("Xác nhận tạo ?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Service.LichLamViecService.themLichLamViec(lichLamViec);
+                    MessageBox.Show("Thêm thành công");
+                }
             }
             else
             {
                 MessageBox.Show("Các mốc thời gian không hợp lệ");
             }
+
         }
     }
 }

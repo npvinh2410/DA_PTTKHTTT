@@ -69,24 +69,30 @@ namespace DA_PTTKHTTT
             String maNVDH = LoginInfo.USERNAME;
 
             Lichlamviec_nvDTO lichlamviec = Lichlamviec_nvService.khoiTao(maLich, maNV, ngay, Ca, maNVDH);
-            if (Lichlamviec_nvService.kiemTraSoLuongNhanVienDacThu(maLich, ngay, Ca, tenLoaiNV) && !Lichlamviec_nvService.kiemTraTonTai(lichlamviec))
+            if (!Lichlamviec_nvService.kiemTraTonTai(lichlamviec))
             {
-                if (Lichlamviec_nvService.themLichLamViec(lichlamviec) )
+                if (Lichlamviec_nvService.kiemTraSoLuongNhanVienDacThu(maLich, ngay, Ca, tenLoaiNV))
                 {
-                    MessageBox.Show("Thêm thành công");
-                    GridLichLamViec.DataSource = Lichlamviec_nvService.docLichLamViecNV(maLich, maNV);
+                    if (Lichlamviec_nvService.themLichLamViec(lichlamviec))
+                    {
+                        MessageBox.Show("Thêm thành công");
+                        GridLichLamViec.DataSource = Lichlamviec_nvService.docLichLamViecNV(maLich, maNV);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thất bại");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại");
+                    MessageBox.Show("Số lượng " + tenLoaiNV + " đã đủ, không thể thêm");
                 }
-                
-                
             }
             else
             {
-                MessageBox.Show("Số lượng " + tenLoaiNV + " đã đủ, không thể thêm");
+                MessageBox.Show("Thời gian làm việc này đã tồn tại, không thể thêm");
             }
+            
 
         }
 

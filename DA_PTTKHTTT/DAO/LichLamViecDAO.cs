@@ -74,7 +74,7 @@ namespace DA_PTTKHTTT.DAO
 
 
                 string query = "insert into DBA_PTTK.lichlamviec "
-                                + "\nvalues('"+lichLamViec.MaLich+ "', to_date('"+ lichLamViec.NgayApDung.ToString("dd/MM/yyyy")+ "', 'dd/mm/yyyy'), to_date('"+lichLamViec.NgayKetThuc.ToString("dd/MM/yyyy") + "', 'dd/mm/yyyy'), "+lichLamViec.TrangThai+")";
+                                + "\nvalues('"+lichLamViec.MaLich+ "', to_date('"+ lichLamViec.NgayApDung.ToString("dd/MM/yyyy")+ "', 'dd/mm/yyyy'), to_date('"+lichLamViec.NgayKetThuc.ToString("dd/MM/yyyy") + "', 'dd/mm/yyyy'), '"+lichLamViec.TrangThai+"')";
 
                 OracleCommand command = conn.CreateCommand();
                 command.CommandType = CommandType.Text;

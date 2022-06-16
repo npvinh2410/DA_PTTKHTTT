@@ -50,14 +50,7 @@ namespace DA_PTTKHTTT.View
             String ca = comboBoxCa.Text;
             if(Service.LichLamViecService.kiemTraThoiGianTrongLich(ngay, maLich))
             {
-                if(Service.LichLamViecService.kiemTraTonTaiTrongLichDangKy(GridDangKy.DataSource as DataTable, ngay, ca))
-                {
-                    GridDangKy.Rows.Add(ngay.ToString("dd/MM/yyyy"), ca);
-                }
-                else
-                {
-                    MessageBox.Show("Thời gian đã tồn tại");
-                }
+                GridDangKy.Rows.Add(ngay.ToString("dd/MM/yyyy"), ca);
             }
             else
             {
