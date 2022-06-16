@@ -11,9 +11,10 @@ namespace DA_PTTKHTTT.Service
 {
     class NhanVienService
     {
-        public static DataTable DocKhoangThoiGianLichLamViec(String maLich)
+
+        public static DataTable DocDanhSachNhanVienDangKyLich(String maLich)
         {
-            if(maLich != null && maLich != "")
+            if (maLich != null && maLich != "")
             {
                 DataTable lichLamViecs = NhanVienDAO.docDanhSachNhanVienDangKyLich(maLich);
                 return lichLamViecs;

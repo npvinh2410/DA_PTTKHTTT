@@ -37,7 +37,7 @@ namespace DA_PTTKHTTT
         private void btnHienThi_Click(object sender, EventArgs e)
         {
             String maLich = (comboBoxThoiGian.SelectedItem as dynamic).Value;
-            DataTable dataTable = NhanVienService.DocKhoangThoiGianLichLamViec(maLich);
+            DataTable dataTable = NhanVienService.DocDanhSachNhanVienDangKyLich(maLich);
             GridThongTin.DataSource = dataTable;
         }
 
