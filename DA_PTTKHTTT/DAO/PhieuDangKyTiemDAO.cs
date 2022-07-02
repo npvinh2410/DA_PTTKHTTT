@@ -62,7 +62,7 @@ namespace DA_PTTKHTTT.DAO
                     madk = "DK1001";
                 }
 
-                string query = "insert into DBA_PTTK.PHIEUDANGKYTIEM values('" + madk + "', " + "TO_DATE('" + DateTime.Now.ToString("yyyy/MM/dd") + "', 'yyyy/mm/dd'), '" + maKH + "', 'CHUA THANH TOAN', null, '" + loaitiem + "')";
+                string query = "insert into DBA_PTTK.PHIEUDANGKYTIEM values('" + madk + "', " + "TO_DATE('" + DateTime.Now.ToString("yyyy/MM/dd") + "', 'yyyy/mm/dd'), '" + maKH + "', 'CHUA THANH TOAN', 0, '" + loaitiem + "')";
 
                 OracleCommand command = conn.CreateCommand();
                 command.CommandType = CommandType.Text;

@@ -63,8 +63,8 @@ namespace DA_PTTKHTTT.Service
             }
 
             string madk = PhieuDangKyTiemDAO.themPhieuDangKyTiem(maKH, "GOI TIEM LE");
-
-            if (madk == null)
+            string mahd = HoaDonDAO.themHoaDon(maKH, madk);
+            if (madk == null||mahd==null)
             {
                 return null;
             }
@@ -90,8 +90,9 @@ namespace DA_PTTKHTTT.Service
             }
 
             string madk = PhieuDangKyTiemDAO.themPhieuDangKyTiem(maKH, "TIEM THEO GOI");
+            string mahd = HoaDonDAO.themHoaDon(maKH, madk);
 
-            if (madk == null)
+            if (madk == null || mahd == null)
             {
                 return null;
             }

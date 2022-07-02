@@ -211,6 +211,51 @@ namespace DA_PTTKHTTT.DAO
             }
         }
 
+        public static string themHoaDon(string maKH, string maDK)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query0 = "select mahd from DBA_PTTK.HOADON order by mahd desc";
+                OracleCommand command0 = new OracleCommand(query0, conn);
+                DataTable dataTable = new DataTable();
+                OracleDataAdapter adapter = new OracleDataAdapter(command0);
+                adapter.Fill(dataTable);
+
+                string mahd = null;
+                if (dataTable.Rows.Count > 0)
+                {
+                    String maCu = dataTable.Rows[0]["MAHD"].ToString();
+                    String sttCu = new String(maCu.Where(Char.IsDigit).ToArray());
+                    int stt = Int32.Parse(sttCu) + 1;
+                    mahd = "HD" + stt.ToString();
+                }
+                else
+                {
+                    mahd = "HD1001";
+                }
+
+                string query = "insert into DBA_PTTK.HOADON values('" + mahd + "',null,null, '" + maKH + "','" + maDK + "', null,null,null)";
+
+                OracleCommand command = conn.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+
+                return mahd;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public static int ThThanhToan(string lantt, string pttt)
         {
             if (pttt == "Thanh toán một lần" && lantt == "1")   //hoa don tt 1 lan da tt xong
