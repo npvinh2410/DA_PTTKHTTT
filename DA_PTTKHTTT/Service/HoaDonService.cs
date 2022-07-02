@@ -22,9 +22,9 @@ namespace DA_PTTKHTTT.Service
             return CTHoaDonDAO.docCTHoaDon(maHD);
         }
 
-        public static string TaoHoaDon(string pttt, string httt)
+        public static bool TaoHoaDon(string pttt, string httt, string maHD)
         {
-            return HoaDonDAO.taoHoaDon(pttt, httt);
+            return HoaDonDAO.taoHoaDon(pttt, httt, maHD);
         }
 
         public static bool TaoCTHoaDon(string maHD)
@@ -41,6 +41,11 @@ namespace DA_PTTKHTTT.Service
         public static bool ThanhToanHoaDon(string mahd, string lantt, string pttt)
         {
             return HoaDonDAO.thanhtoanHoaDon(mahd, lantt, pttt);
+        }
+
+        public static bool update_PhieuDK(string maDK)
+        {
+            return HoaDonDAO.update_phieuDK(maDK);
         }
     }
 }

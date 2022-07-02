@@ -38,8 +38,10 @@ namespace DA_PTTKHTTT.View.KhachHang
                     case DialogResult.Ignore:
                         break;
                     case DialogResult.Yes:
-                        string maHD = Service.HoaDonService.TaoHoaDon(pttt.Text, httt.Text);
-                        Service.HoaDonService.TaoCTHoaDon(maHD);
+                        string mahd = dtvhd.SelectedRows[0].Cells[0].Value.ToString();
+                        Service.HoaDonService.TaoHoaDon(pttt.Text, httt.Text, mahd);
+                        //Service.HoaDonService.TaoCTHoaDon(maHD);
+                        XemHD_Click(sender, e);
                         break;
                     case DialogResult.No:
                         break;
@@ -67,6 +69,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             string mahd = dtvhd.SelectedRows[0].Cells[0].Value.ToString();
             string lantt = dtvhd.SelectedRows[0].Cells[1].Value.ToString();
             string pttt = dtvhd.SelectedRows[0].Cells[2].Value.ToString();
+            string madk = dtvhd.SelectedRows[0].Cells[4].Value.ToString();
             if (dtvhd.SelectedRows != null)
             {
                 DialogResult rs = MessageBox.Show("Bạn có muốn xác nhận thanh toán?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
@@ -95,7 +98,14 @@ namespace DA_PTTKHTTT.View.KhachHang
                             Service.HoaDonService.ThanhToanHoaDon(mahd, lantt, pttt);
                             MessageBox.Show("Bạn đã thanh toán thành công");
                             XemHD_Click(sender, e);
+
+                            string lantt2 = (Int32.Parse(lantt) + 1).ToString();
+                            if (Service.HoaDonService.THThanhtoan(lantt2, pttt) == 1)
+                            {
+                                Service.HoaDonService.update_PhieuDK(madk); //
+                            }
                         }
+
 
                         break;
                     case DialogResult.No:
