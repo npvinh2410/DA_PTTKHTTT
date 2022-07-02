@@ -18,7 +18,7 @@ namespace DA_PTTKHTTT.DAO
             {
                 conn.Open();
 
-                string query = "SELECT MAHD, LANTHANHTOAN, PHUONGTHUCTHANHTOAN, TONGTIEN FROM DBA_PTTK.HOADON WHERE MAKH = '" + maKH + "' order by MAHD desc";
+                string query = "SELECT MAHD, LANTHANHTOAN, PHUONGTHUCTHANHTOAN, TONGTIEN, MADK FROM DBA_PTTK.HOADON WHERE MAKH = '" + maKH + "' order by MAHD desc";
 
                 OracleCommand command = new OracleCommand(query, conn);
                 DataTable dataTable = new DataTable();
@@ -119,16 +119,15 @@ namespace DA_PTTKHTTT.DAO
             }
         }
 
-        public static string taoHoaDon(string pttt, string httt)
+        public static bool taoHoaDon(string pttt, string httt, string maHD)
         {
             OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
             try
             {
                 conn.Open();
 
-                PhieuDatMuaDTO phieudat = new PhieuDatMuaDTO();
+                /*PhieuDatMuaDTO phieudat = new PhieuDatMuaDTO();
                 HoaDonDTO hoadon = new HoaDonDTO();
-
 
                 DataTable dataTable = HoaDonDAO.layPhieuDM();
                 phieudat.MaPD = dataTable.Rows[0]["MAPD"].ToString();
@@ -146,22 +145,26 @@ namespace DA_PTTKHTTT.DAO
                 else
                 {
                     hoadon.MaHD = "H1";
-                }
+                }*/
 
 
-                string query = "INSERT INTO DBA_PTTK.HOADON "
-                                + "values('" + hoadon.MaHD + "', " + dataTable.Rows.Count.ToString() + ", " + phieudat.TongTien.ToString() + ", '" + LoginInfo.USERNAME.ToUpper() + "', null, 1, '" + pttt + "', '" + httt + "')";
+
+
+                string query = "UPDATE DBA_PTTK.HOADON SET PHUONGTHUCTHANHTOAN = '" + pttt + "', HINHTHUCTHANHTOAN = '" + httt + "' WHERE MAHD = '" + maHD + "'";
+
+                //string query = "INSERT INTO DBA_PTTK.HOADON "
+                                //+ "values('" + hoadon.MaHD + "', " + dataTable.Rows.Count.ToString() + ", " + phieudat.TongTien.ToString() + ", '" + LoginInfo.USERNAME.ToUpper() + "', null, 1, '" + pttt + "', '" + httt + "')";
 
                 OracleCommand command = conn.CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = query;
                 command.ExecuteNonQuery();
 
-                return hoadon.MaHD;
+                return true;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
             finally
             {
@@ -288,6 +291,32 @@ namespace DA_PTTKHTTT.DAO
                 command.CommandText = query;
                 command.ExecuteNonQuery();
 
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static bool update_phieuDK(string maDK)
+        {
+            OracleConnection conn = Connection.DBConnection.GetDBConnection(LoginInfo.USERNAME, LoginInfo.PASSWORD);
+            try
+            {
+                conn.Open();
+
+                string query = "UPDATE DBA_PTTK.PHIEUDANGKYTIEM SET TINHTRANGTHANHTOAN = 'ĐÃ THANH TOÁN' WHERE MADK = '" + maDK + "'";
+
+                OracleCommand command = conn.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+                command.ExecuteNonQuery();
 
                 return true;
             }
