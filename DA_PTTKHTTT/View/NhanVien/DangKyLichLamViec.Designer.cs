@@ -47,7 +47,6 @@ namespace DA_PTTKHTTT.View
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnGui = new System.Windows.Forms.Button();
             this.GridDangKy = new System.Windows.Forms.DataGridView();
             this.NGAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -232,23 +231,13 @@ namespace DA_PTTKHTTT.View
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.btnGui);
             this.panel2.Controls.Add(this.GridDangKy);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Location = new System.Drawing.Point(543, 201);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(511, 396);
+            this.panel2.Size = new System.Drawing.Size(443, 396);
             this.panel2.TabIndex = 10;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(399, 136);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 44);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Xóa";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // btnGui
             // 
@@ -309,7 +298,7 @@ namespace DA_PTTKHTTT.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 636);
+            this.ClientSize = new System.Drawing.Size(1046, 636);
             this.Controls.Add(this.comboBoxThoiGian);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -343,7 +332,6 @@ namespace DA_PTTKHTTT.View
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnGui;
         private System.Windows.Forms.DataGridView GridDangKy;
         private System.Windows.Forms.Label label11;

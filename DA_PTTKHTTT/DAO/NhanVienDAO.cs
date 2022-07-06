@@ -20,7 +20,7 @@ namespace DA_PTTKHTTT.DAO
 
                 string query = "select nv.MANV, nv.TENNV, loai.TENLOAINV, tt.tentt, nv.EMAIL"
                                 + "\nfrom DBA_PTTK.nhanvien nv, DBA_PTTK.thongtin_dk_lichlamviec dkl, DBA_PTTK.loainhanvien loai, DBA_PTTK.trungtamtiemchung tt"
-                                + "\nwhere VITRI = 'BS' and nv.manv = dkl.manv and dkl.malich = '" + maLich + "'"
+                                + "\nwhere nv.manv = dkl.manv and dkl.malich = '" + maLich + "'"
                                 + "\nand nv.vitri = loai.maloai and tt.matt = nv.matt"
                                 + "\ngroup by nv.MANV, nv.TENNV, loai.TENLOAINV, tt.tentt, nv.EMAIL";
                 OracleCommand command = new OracleCommand(query, conn);

@@ -101,5 +101,10 @@ namespace DA_PTTKHTTT.View
                 MessageBox.Show("Thời gian không hợp lệ");
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

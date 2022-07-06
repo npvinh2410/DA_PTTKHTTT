@@ -38,7 +38,6 @@ namespace DA_PTTKHTTT
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnThem = new System.Windows.Forms.Button();
             this.comboBoxThoiGian = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnHienThi = new System.Windows.Forms.Button();
@@ -129,7 +128,6 @@ namespace DA_PTTKHTTT
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnThem);
             this.panel1.Controls.Add(this.comboBoxThoiGian);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.btnHienThi);
@@ -137,16 +135,6 @@ namespace DA_PTTKHTTT
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(859, 79);
             this.panel1.TabIndex = 17;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(705, 24);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(68, 34);
-            this.btnThem.TabIndex = 7;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // comboBoxThoiGian
             // 
@@ -213,7 +201,6 @@ namespace DA_PTTKHTTT
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.ComboBox comboBoxThoiGian;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnHienThi;

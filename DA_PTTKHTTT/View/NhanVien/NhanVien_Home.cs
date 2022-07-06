@@ -19,7 +19,7 @@ namespace DA_PTTKHTTT.View.NhanVien
 
         private void NhanVien_Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

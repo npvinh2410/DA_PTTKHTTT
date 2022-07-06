@@ -68,6 +68,7 @@ namespace DA_PTTKHTTT.View
                 this.Hide();
                 form.ShowDialog();
             }
+            this.Show();
         }
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)

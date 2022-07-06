@@ -42,7 +42,7 @@ namespace DA_PTTKHTTT.View.QuanLy
 
         private void QuanLy_Home_Closing(object sender, FormClosingEventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            
         }
     }
 }
