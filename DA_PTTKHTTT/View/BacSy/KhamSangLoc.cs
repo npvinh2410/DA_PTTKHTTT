@@ -32,8 +32,8 @@ namespace DA_PTTKHTTT.View.BacSy
             string chidinhtiem = "CO";
             MessageBox.Show("Cho phép khách hàng tiêm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ChiDinhTiemChungService.chidinhChoTiem(maHS, chidinhtiem);
-            TiemChung form = new TiemChung();
-            form.ShowDialog();
+            /*TiemChung form = new TiemChung();
+            form.ShowDialog();*/
         }
 
         private void btnKhongChoTiem_Click(object sender, EventArgs e)
@@ -42,8 +42,8 @@ namespace DA_PTTKHTTT.View.BacSy
             string chidinhtiem = "KHONG";
             ChiDinhTiemChungService.chidinhKhongChoTiem(maHS, chidinhtiem);
             MessageBox.Show("Không cho phép khách hàng tiêm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            TiemChung form = new TiemChung();
-            form.ShowDialog();
+            /*TiemChung form = new TiemChung();
+            form.ShowDialog();*/
         }
 
         private void btnNhapKham_Click(object sender, EventArgs e)
@@ -60,9 +60,5 @@ namespace DA_PTTKHTTT.View.BacSy
             MessageBox.Show("Bạn đã nhập thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
