@@ -19,7 +19,7 @@ namespace DA_PTTKHTTT.DAO
                 conn.Open();
 
                 string query = "select HS.MAHS, KH.TENKH, HS.NGAYLAP, CTHS.CHIDINHTIEM"
-                                + "\nfrom DBA_TEST.HOSOTIEMCHUNG HS, DBA_TEST.KHACHHANG KH, DBA_TEST.CT_HOSO CTHS"
+                                + "\nfrom DBA_PTTK.HOSOTIEMCHUNG HS, DBA_PTTK.KHACHHANG KH, DBA_PTTK.CT_HOSO CTHS"
                                 + "\nwhere HS.MAKH = KH.MAKH and HS.MAHS=CTHS.MAHS and HS.MAKH = '" + MaKhachHang + "'";
 
                 /*string query = "select * from DBA_TEST.HOSOTIEMCHUNG where MAKH = 'KH001'";*/
@@ -49,7 +49,7 @@ namespace DA_PTTKHTTT.DAO
                 conn.Open();
 
                 string query = "select HS.MAHS, KH.TENKH, HS.NHIETDO, HS.HUYETAP, HS.COTIENSUBENHNEN, HS.NGAYLAP"
-                                + "\nfrom DBA_TEST.HOSOTIEMCHUNG HS, DBA_TEST.KHACHHANG KH"
+                                + "\nfrom DBA_PTTK.HOSOTIEMCHUNG HS, DBA_PTTK.KHACHHANG KH"
                                 + "\nwhere HS.MAKH = KH.MAKH and HS.MAHS = '" + MaHS + "'";
 
                 OracleCommand command = new OracleCommand(query, conn);
@@ -75,7 +75,7 @@ namespace DA_PTTKHTTT.DAO
             try
             {
                 conn.Open();
-                string query = "update DBA_TEST.HOSOTIEMCHUNG "
+                string query = "update DBA_PTTK.HOSOTIEMCHUNG "
                                 + "\nset NHIETDO = '"+ NhietDo + "', HUYETAP = '" + HuyetAp + "', COTIENSUBENHNEN = '" + cotiensuBenhNen + "'"
                                 + "\nwhere MAHS = '" + MaHS + "'";
 
@@ -102,8 +102,8 @@ namespace DA_PTTKHTTT.DAO
             try
             {
                 conn.Open();
-                string query = "update DBA_TEST.CT_HOSO CTHS"
-                                + "\nset HS.CHIDINHTIEM = " + chidinhtiem + ""
+                string query = "update DBA_PTTK.CT_HOSO CTHS"
+                                + "\nset CTHS.CHIDINHTIEM = " + chidinhtiem + ""
                                 + "\nwhere CTHS.MAHS = '" + MaHS + "'";
 
                 OracleCommand command = new OracleCommand(query, conn);
@@ -129,8 +129,8 @@ namespace DA_PTTKHTTT.DAO
             try
             {
                 conn.Open();
-                string query = "update DBA_TEST.CT_HOSO CTHS"
-                                + "\nset HS.CHIDINHTIEM = " + chidinhtiem + ""
+                string query = "update DBA_PTTK.CT_HOSO CTHS"
+                                + "\nset CTHS.CHIDINHTIEM = " + chidinhtiem + ""
                                 + "\nwhere CTHS.MAHS = '" + MaHS + "'";
 
                 OracleCommand command = new OracleCommand(query, conn);
