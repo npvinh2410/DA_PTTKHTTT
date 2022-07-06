@@ -24,11 +24,11 @@ namespace DA_PTTKHTTT.View.KhachHang
             //Neu la goi tiem
             if (loaitiem == true)
             {
-                docDSGoiTiem();
+                HienThiDSGoiTiem();
             }
             else
             {
-                docDSVC();
+                HienThiDSVC();
             }
             kh = KhachHangDTO.KhoiTaoKH(makh, tenkh, sdt, gioitinh, diachi, hotennt, moiqh, sdtnguoithan);
             loai = loaitiem;
@@ -42,14 +42,14 @@ namespace DA_PTTKHTTT.View.KhachHang
             grid_dsgoitiemchon.Columns.Add("trungtam", "TRUNGTAMTIEM");
         }
 
-        private void docDSGoiTiem()
+        private void HienThiDSGoiTiem()
         {
             DataTable dataTable = GoiTiemService.docGoiTiem();
             grid_dsgoitiem.DataSource = dataTable;
             grid_dsgoitiem.AllowUserToAddRows = false;
         }
 
-        private void docDSVC()
+        private void HienThiDSVC()
         {
             DataTable dataTable = VacXinService.docDanhSachVC();
             grid_dsgoitiem.DataSource = dataTable;
@@ -114,6 +114,11 @@ namespace DA_PTTKHTTT.View.KhachHang
 
         }
 
+        private void HienThiGoiTiemChon(string magt,string tengt, string dongia, DateTime ngay, string trungtamtiem)
+        {
+            grid_dsgoitiemchon.Rows.Add(magt, tengt, dongia, ngay, trungtamtiem);
+        }
+
         private void btn_them_Click(object sender, EventArgs e)
         {
             if (tb_ngaytiem.Value.ToString() == "" || cbb_trungtamtiem.Text == "")
@@ -127,11 +132,11 @@ namespace DA_PTTKHTTT.View.KhachHang
                 string magt = grid_dsgoitiem.SelectedRows[0].Cells[0].Value.ToString();
                 if (loai==true)
                 {
-                    kt = PhieuDangKyTiemService.docSLGoiTiemton(magt);
+                    kt = GoiTiemService.KiemTraSLGoiTiemton(magt);
                 }    
                 else
                 {
-                    kt = PhieuDangKyTiemService.docSLVacXinton(magt);
+                    kt = VacXinService.KiemTraSLVacXinton(magt);
                 }
                 if (kt == true)
                 {
@@ -139,7 +144,7 @@ namespace DA_PTTKHTTT.View.KhachHang
                     string dongia = grid_dsgoitiem.SelectedRows[0].Cells[3].Value.ToString();
                     DateTime ngay = DateTime.Parse(tb_ngaytiem.Value.ToString());
                     string trungtamtiem = cbb_trungtamtiem.Text.ToString();
-                    grid_dsgoitiemchon.Rows.Add(magt, tengt, dongia, ngay, trungtamtiem);
+                    HienThiGoiTiemChon(magt, tengt, dongia, ngay, trungtamtiem);
                 }
                 else
                 {

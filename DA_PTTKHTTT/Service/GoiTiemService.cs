@@ -12,6 +12,13 @@ namespace DA_PTTKHTTT.Service
 {
     internal class GoiTiemService
     {
+        public static bool KiemTraSLGoiTiemton(string mavc)
+        {
+            int sl = GoiTiemDAO.docSLGoiTiemton(mavc);
+            if (sl > 0) return true;
+            return false;
+        }
+
         public static DataTable docGoiTiem()
         {
            return GoiTiemDAO.docDanhSachGoiTiem();

@@ -17,6 +17,13 @@ namespace DA_PTTKHTTT.Service
             return VacXinDAO.docDanhSachVacXin();
         }
 
+        public static bool KiemTraSLVacXinton(string mavc)
+        {
+            int sl = VacXinDAO.docSLVacXinton(mavc);
+            if (sl > 0) return true;
+            return false;
+        }
+
         public static string datMuaVC(string maKH, KhachHangDTO kh, List<string> dsMaGoi, List<string> dsMaVC)
         {
             if (maKH == "")

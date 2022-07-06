@@ -27,6 +27,7 @@ namespace DA_PTTKHTTT.View.KhachHang
             tb_hotenkh.Text = tenkh;
             tb_diachikh.Text = diachi;
             tb_sdtkh.Text = sdt;
+            grid_goitiemchon.DataSource = dataSource;
             if (gioitinh == "NAM")
             {
                 ckb_nam.Checked = true;
@@ -42,11 +43,21 @@ namespace DA_PTTKHTTT.View.KhachHang
             {
                 ckb_tiemtheogoi.Checked = true;
                 ckb_goitiemle.Checked = false;
+                grid_goitiemchon.Columns[0].HeaderText = "MAGT";
+                grid_goitiemchon.Columns[1].HeaderText = "TENGT";
+                grid_goitiemchon.Columns[2].HeaderText = "DONGIA";
+                grid_goitiemchon.Columns[3].HeaderText = "NGAYTIEM";
+                grid_goitiemchon.Columns[4].HeaderText = "TRUNGTAMTIEM";
             }
             else
             {
                 ckb_tiemtheogoi.Checked = false;
                 ckb_goitiemle.Checked = true;
+                grid_goitiemchon.Columns[0].HeaderText = "MAVC";
+                grid_goitiemchon.Columns[1].HeaderText = "TENVC";
+                grid_goitiemchon.Columns[2].HeaderText = "DONGIA";
+                grid_goitiemchon.Columns[3].HeaderText = "NGAYTIEM";
+                grid_goitiemchon.Columns[4].HeaderText = "TRUNGTAMTIEM";
             }
             if (hotennt == "")
             {
@@ -61,8 +72,8 @@ namespace DA_PTTKHTTT.View.KhachHang
             tb_moiquanhe.Text = moiqh;
             tb_sdtnguoithan.Text = sdtnguoithan;
 
-            grid_goitiemchon.DataSource = dataSource;
-            grid_goitiemchon.Columns[0].Name = "MAVC";
+        
+            
         }
 
         private bool kiemTraKHThanhVien()
@@ -190,13 +201,13 @@ namespace DA_PTTKHTTT.View.KhachHang
         private List<CTDangKyGoiTiemLeDTO> docDSGoiTiemLe()
         {
             List<CTDangKyGoiTiemLeDTO> dsGoiTiem = new List<CTDangKyGoiTiemLeDTO>();
-            int selectCount = grid_goitiemchon.SelectedRows.Count;
+            int selectCount = grid_goitiemchon.RowCount;
 
-            for (int i = 0; i < selectCount; i++)
+            for (int i = 0; i < selectCount-2; i++)
             {
-                string mavc = grid_goitiemchon.SelectedRows[i].Cells[0].Value.ToString();
-                DateTime ngay = DateTime.Parse(grid_goitiemchon.SelectedRows[i].Cells[3].Value.ToString());
-                string trungtamtiem = grid_goitiemchon.SelectedRows[i].Cells[4].Value.ToString();
+                string mavc = grid_goitiemchon.Rows[i].Cells[0].Value.ToString();
+                DateTime ngay = DateTime.Parse(grid_goitiemchon.Rows[i].Cells[3].Value.ToString());
+                string trungtamtiem = grid_goitiemchon.Rows[i].Cells[4].Value.ToString();
                 CTDangKyGoiTiemLeDTO ct = new CTDangKyGoiTiemLeDTO("", mavc, ngay, trungtamtiem);
                 dsGoiTiem.Add(ct);
             }
@@ -206,13 +217,13 @@ namespace DA_PTTKHTTT.View.KhachHang
         private List<CTDangKyGoiTiemDTO> docDSGoiTiem()
         {
             List<CTDangKyGoiTiemDTO> dsGoiTiem = new List<CTDangKyGoiTiemDTO>();
-            int selectCount = grid_goitiemchon.SelectedRows.Count;
+            int selectCount = grid_goitiemchon.RowCount;
 
-            for (int i = 0; i < selectCount; i++)
+            for (int i = 0; i < selectCount-2; i++)
             {
-                string magt = grid_goitiemchon.SelectedRows[i].Cells[0].Value.ToString();
-                DateTime ngay = DateTime.Parse(grid_goitiemchon.SelectedRows[i].Cells[3].Value.ToString());
-                string trungtamtiem = grid_goitiemchon.SelectedRows[i].Cells[4].Value.ToString();
+                string magt = grid_goitiemchon.Rows[i].Cells[0].Value.ToString();
+                DateTime ngay = DateTime.Parse(grid_goitiemchon.Rows[i].Cells[3].Value.ToString());
+                string trungtamtiem = grid_goitiemchon.Rows[i].Cells[4].Value.ToString();
                 CTDangKyGoiTiemDTO ct = new CTDangKyGoiTiemDTO("", magt, ngay, trungtamtiem);
                 dsGoiTiem.Add(ct);
             }
@@ -273,12 +284,12 @@ namespace DA_PTTKHTTT.View.KhachHang
             }
             if (makh == null)
             {
-                MessageBox.Show("Không thành công!");
+                MessageBox.Show("Đăng ký không thành công!");
             }
             else
             {
-                MessageBox.Show("Thành công!");
-                MessageBox.Show("Mã Khách hàng của bạn là: " + makh);
+                MessageBox.Show("Đăng ký thành công. Vui lòng thực hiện thanh toán!");
+                this.Hide();
             }
         }
 

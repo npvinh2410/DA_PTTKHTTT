@@ -240,7 +240,7 @@ namespace DA_PTTKHTTT.DAO
                     mahd = "HD1001";
                 }
 
-                string query = "insert into DBA_PTTK.HOADON values('" + mahd + "',null,null, '" + maKH + "','" + maDK + "', null,null,null)";
+                string query = "insert into DBA_PTTK.HOADON values('" + mahd + "',null,null, '" + maKH + "','" + maDK + "', 0,null,null)";
 
                 OracleCommand command = conn.CreateCommand();
                 command.CommandType = CommandType.Text;

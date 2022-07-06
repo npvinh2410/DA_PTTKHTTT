@@ -27,6 +27,13 @@ namespace DA_PTTKHTTT.Service
             return HoaDonDAO.taoHoaDon(pttt, httt, maHD);
         }
 
+        public static bool ThemHoaDon(string madk, string makh)
+        {
+            if (HoaDonDAO.themHoaDon(makh, madk) != null)
+                return true;
+            return false;
+        }
+
         public static bool TaoCTHoaDon(string maHD)
         {
             return HoaDonDAO.taoCTHoaDon(maHD);
